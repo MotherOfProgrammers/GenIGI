@@ -1,0 +1,44 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing & Coverage
+/coverage
+/.nyc_output
+
+# Next.js build output
+/.next/
+/out/
+
+# Production builds
+/build
+/dist
+
+# Environment variables & local configuration
+.env
+.env.*
+!.env.example
+
+# Vercel deployment folder
+.vercel
+
+# TypeScript build info & generated definitions
+*.tsbuildinfo
+next-env.d.ts
+
+# Editor & OS specific files
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+Thumbs.db
+
+# Logs & debugging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+.turbo
