@@ -1,17 +1,42 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+"use client";
 
-export const metadata: Metadata = { title: "Login" };
+import Link from "next/link";
 
 export default function LoginPage() {
   return (
     <main className="account-main">
       <section className="account-panel">
         <div className="eyebrow">Community accounts</div>
-        <h1 className="display">Not quite<br />online yet.</h1>
-        <p>We’re still getting the community spaces ready. Login is not live, and there’s no account system to sign into right now.</p>
-        <div className="account-alert"><strong>Nothing to enter just yet.</strong><br />We won’t ask you for a password or pretend an account exists. Check back when we announce that accounts are ready.</div>
-        <Link className="button" href="/about">Get to know GenIGI</Link>
+        <h1 className="display">Sign In</h1>
+        <p>Access your GenIGI community account.</p>
+        <form className="auth-form" action="#" method="post" onSubmit={(e) => e.preventDefault()}>
+          <div className="form-group">
+            <label htmlFor="login-username" className="form-label">Username</label>
+            <input 
+              type="text" 
+              id="login-username" 
+              name="username" 
+              className="form-input" 
+              required 
+              placeholder="Enter your username"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="login-password" className="form-label">Password</label>
+            <input 
+              type="password" 
+              id="login-password" 
+              name="password" 
+              className="form-input" 
+              required 
+              placeholder="Enter your password"
+            />
+          </div>
+          <button type="submit" className="button auth-button">Login</button>
+        </form>
+        <p className="auth-switch">
+          Don't have an account? <Link href="/register">Register here</Link>
+        </p>
         <Link className="account-back" href="/">← Back to home</Link>
       </section>
     </main>

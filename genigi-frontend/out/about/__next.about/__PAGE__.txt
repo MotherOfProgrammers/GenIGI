@@ -1,0 +1,25 @@
+2:"$Sreact.fragment"
+3:"/_next/static/chunks/0zv_8ppwh2c4m.js"
+4:I[39756,["$3"],"default"]
+5:I[37457,["$3"],"default"]
+a:I[22016,["$3"],""]
+b:I[97367,["$3"],"OutletBoundary"]
+c:"$Sreact.suspense"
+f:"ViewportBoundary"
+10:I[97367,["$3"],"$f"]
+11:"MetadataBoundary"
+12:I[97367,["$3"],"$11"]
+7:X
+7:C
+8:X
+9:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","main",null,{"children":[["$","div",null,{"className":"wrap page-intro","children":[["$","div",null,{"className":"eyebrow","children":"Who we are"}],["$","h1",null,{"className":"display","children":["Old missions.",["$","br",null,{}],"New company."]}],["$","p",null,{"children":"GenIGI is a player-first home for people who still care about Project IGI—and want to see it treated with the respect a classic deserves."}]]}],["$","section",null,{"className":"wrap about-grid","children":[["$","div",null,{"className":"about-copy","children":[["$","h2",null,{"children":"We remember the feeling."}],["$","p",null,{"children":"The quiet before a patrol turns. The satisfaction of planning a route and getting through on your own terms. Project IGI made space for a kind of grounded, deliberate action that stuck with us."}],["$","p",null,{"children":"GenIGI brings longtime fans and new players together around the same idea: improve the experience where it needs care, and protect the original story and feel wherever it doesn’t."}],["$","p",null,{"children":"This is a community in progress. We’ll share what’s real, be open about what’s early, and make room for people who want to help."}]]}],["$","aside",null,{"className":"quote-card","children":[["$","div",null,{"className":"eyebrow","children":"The north star"}],["$","blockquote",null,{"children":"“Make the way back feel welcoming. Keep the mission itself intact.”"}],["$","p",null,{"children":"GenIGI community principle / 001"}]]}]]}],["$","section",null,{"className":"wrap section","style":{"paddingTop":0},"children":[["$","div",null,{"className":"section-heading","children":[["$","div",null,{"children":[["$","div",null,{"className":"eyebrow","children":"What we stand for"}],["$","h2",null,{"className":"display","children":"A steady hand."}]]}],["$","p",null,{"children":"Not every old game needs to become something else. We believe the best improvements know when to stop."}]]}],["$","div",null,{"className":"values-grid","children":[["$","article",null,{"className":"value","children":[["$","h3",null,{"children":"Keep the story"}],["$","p",null,{"children":"Campaign, characters, and tone are part of the point. They’re not obstacles to modernization."}]]}],["$","article",null,{"className":"value","children":[["$","h3",null,{"children":"Be honest"}],["$","p",null,{"children":"Work in progress means work in progress. No imaginary release buttons, downloads, or timelines."}]]}],["$","article",null,{"className":"value","children":[["$","h3",null,{"children":"Welcome in"}],["$","p",null,{"children":"Whether IGI was your first tactical game or you just discovered it, you belong in the conversation."}]]}]]}]]}],["$","section",null,{"className":"work-band","children":["$","div",null,{"className":"wrap work-band-inner","children":[["$","div",null,{"children":[["$","div",null,{"className":"eyebrow","children":"A community takes people"}],["$","h2",null,{"className":"display","children":"Come see what’s taking shape."}]]}],["$","$La",null,{"className":"button","href":"/mods","children":["Browse the work ",["$","svg",null,{"viewBox":"0 0 20 20","fill":"none","aria-hidden":"true","children":["$","path",null,{"d":"M3 10h13M10 4l6 6-6 6","stroke":"currentColor","strokeWidth":"1.7","strokeLinecap":"square"}]}]]}]]}]}]]}],null,["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]]}],"p":"$@e","v":null,"s":"$8"}}]]
+1:[["children",{"s":"about","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}]}]]}],"p":"$@6","v":"$7","s":"$8"},"c":"$Q9"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L10",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L12",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$c",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"About the community — GenIGI"}],["$","meta","1",{"name":"description","content":"A player-first Project IGI modding community. Modern quality improvements, with the original story and feel kept intact."}]]}]}],null]}],null]}],"p":"$@13","v":null,"s":"$8"}},"a":"$@14","u":"$@15","b":"ncwRvV0P9h_GnYZXBsKCt"}
+d:null
+15:true
+8:300
+8:C
+14:0
+6:"$undefined"
+13:"$undefined"
+e:"$undefined"

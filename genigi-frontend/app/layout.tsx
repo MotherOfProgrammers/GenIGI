@@ -4,12 +4,20 @@ import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 import "./globals.css";
 
-const themeBootstrap = `try {
-  const savedTheme = localStorage.getItem("genigi-theme");
-  document.documentElement.dataset.theme = savedTheme === "light" ? "light" : "dark";
-} catch {
-  document.documentElement.dataset.theme = "dark";
-}`;
+const themeBootstrap = `
+(function() {
+  try {
+    var saved = localStorage.getItem('genigi-theme');
+    if (saved === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
+`;
 
 export const metadata: Metadata = {
   title: {
@@ -23,9 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <Script id="genigi-theme-bootstrap" strategy="beforeInteractive">
-          {themeBootstrap}
-        </Script>
+        <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
       </head>
       <body>
         <div className="site-shell">

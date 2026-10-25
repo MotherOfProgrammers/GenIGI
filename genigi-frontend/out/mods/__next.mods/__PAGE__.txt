@@ -1,0 +1,25 @@
+2:"$Sreact.fragment"
+3:"/_next/static/chunks/0zv_8ppwh2c4m.js"
+4:I[39756,["$3"],"default"]
+5:I[37457,["$3"],"default"]
+a:I[22016,["$3"],""]
+b:I[97367,["$3"],"OutletBoundary"]
+c:"$Sreact.suspense"
+f:"ViewportBoundary"
+10:I[97367,["$3"],"$f"]
+11:"MetadataBoundary"
+12:I[97367,["$3"],"$11"]
+7:X
+7:C
+8:X
+9:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","main",null,{"children":[["$","div",null,{"className":"wrap page-intro","children":[["$","div",null,{"className":"eyebrow","children":"Community workboard · 2025/26"}],["$","h1",null,{"className":"display","children":["Ideas in the",["$","br",null,{}],"works."]}],["$","p",null,{"children":"These are directions the community cares about—not a catalogue of released downloads. We’ll label real builds clearly when there’s something ready to share."}]]}],["$","div",null,{"className":"wrap","children":["$","div",null,{"className":"status-note","children":"Nothing listed here is currently presented as released or downloadable. We’d rather be clear about the stage than promise more than we can deliver."}]}],["$","section",null,{"className":"section","children":["$","div",null,{"className":"wrap","children":[["$","div",null,{"className":"section-heading","children":[["$","div",null,{"children":[["$","div",null,{"className":"eyebrow","children":"Where attention is going"}],["$","h2",null,{"className":"display","children":["A careful kind",["$","br",null,{}],"of progress."]}]]}],["$","p",null,{"children":"Better compatibility and thoughtful quality-of-life changes can make an old favourite easier to revisit—while leaving the campaign alone."}]]}],["$","div",null,{"className":"mod-list","children":[["$","article","01",{"className":"mod-row","children":[["$","span",null,{"className":"mod-number","children":["01"," / 03"]}],["$","div",null,{"children":[["$","h2",null,{"children":"A smoother return to the field"}],["$","p",null,{"children":"Exploring compatibility and quality-of-life improvements that can help the original game feel at home on current setups. This is a community direction, not a released mod."}]]}],["$","span",null,{"className":"mod-state","children":"Direction · early"}]]}],["$","article","02",{"className":"mod-row","children":[["$","span",null,{"className":"mod-number","children":["02"," / 03"]}],["$","div",null,{"children":[["$","h2",null,{"children":"Clarity without compromise"}],["$","p",null,{"children":"Thinking through visual and interface refinements that respect the original atmosphere instead of smoothing away its identity."}]]}],["$","span",null,{"className":"mod-state","children":"Work in progress"}]]}],["$","article","03",{"className":"mod-row","children":[["$","span",null,{"className":"mod-number","children":["03"," / 03"]}],["$","div",null,{"children":[["$","h2",null,{"children":"The campaign, unchanged"}],["$","p",null,{"children":"Any future improvements should protect the story, characters, mission order, and grounded tone that make IGI feel like IGI."}]]}],["$","span",null,{"className":"mod-state","children":"Community principle"}]]}]]}]]}]}],["$","section",null,{"className":"work-band","children":["$","div",null,{"className":"wrap work-band-inner","children":[["$","div",null,{"children":[["$","div",null,{"className":"eyebrow","children":"Have a useful idea?"}],["$","h2",null,{"className":"display","children":"The best work starts with players."}]]}],["$","$La",null,{"className":"button","href":"/about","children":["What we’re about ",["$","svg",null,{"viewBox":"0 0 20 20","fill":"none","aria-hidden":"true","children":["$","path",null,{"d":"M3 10h13M10 4l6 6-6 6","stroke":"currentColor","strokeWidth":"1.7","strokeLinecap":"square"}]}]]}]]}]}]]}],null,["$","$Lb",null,{"children":["$","$c",null,{"name":"Next.MetadataOutlet","children":"$@d"}]}]]}],"p":"$@e","v":null,"s":"$8"}}]]
+1:[["children",{"s":"mods","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L4",null,{"parallelRouterKey":"children","template":["$","$L5",null,{}]}]]}],"p":"$@6","v":"$7","s":"$8"},"c":"$Q9"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L10",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L12",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$c",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Mods & directions — GenIGI"}],["$","meta","1",{"name":"description","content":"A player-first Project IGI modding community. Modern quality improvements, with the original story and feel kept intact."}]]}]}],null]}],null]}],"p":"$@13","v":null,"s":"$8"}},"a":"$@14","u":"$@15","b":"ncwRvV0P9h_GnYZXBsKCt"}
+d:null
+15:true
+8:300
+8:C
+14:0
+6:"$undefined"
+13:"$undefined"
+e:"$undefined"

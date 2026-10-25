@@ -44,6 +44,35 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <section className="upcoming-section section">
+        <div className="wrap">
+          <div className="section-heading">
+            <div><div className="eyebrow">Upcoming · Major Release</div><h2 className="display">IGI Rampage</h2></div>
+            <p>The next evolution of Project IGI. Built by the community for the community.</p>
+          </div>
+          <div className="rampage-grid">
+            <div className="rampage-features">
+              <div className="eyebrow" style={{ marginBottom: "20px" }}>✨ Features</div>
+              <ul className="rampage-list">
+                <li><strong>🌐 Modernized Multiplayer</strong> — work toward a more flexible online multiplayer experience.</li>
+                <li><strong>🗺️ New Maps</strong> — additional environments for multiplayer matches.</li>
+                <li><strong>🔫 New Weapons and Weapon Skins</strong> — expanded weapon variety and visual customization.</li>
+                <li><strong>🪖 New Characters and Character Skins</strong> — more options for player appearance.</li>
+                <li><strong>🎨 Enhanced Graphics</strong> — visual improvements aimed at multiplayer.</li>
+                <li><strong>🏃 New Movements and Combat Tactics</strong> — additional ways to move and engage.</li>
+                <li><strong>🧰 Development Tools</strong> — project utilities for inspecting, preparing, and working with game data.</li>
+              </ul>
+            </div>
+            <div className="rampage-visual">
+              <div className="rampage-card">
+                <div className="rampage-badge">COMING SOON</div>
+                <h3>IGI RAMPAGE</h3>
+                <p>The mission continues. Redefining tactical stealth for a new generation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="work-band">
         <div className="wrap work-band-inner">
           <div><div className="eyebrow">Field status · in progress</div><h2 className="display">Good ideas.<br />No made-up release dates.</h2></div>
