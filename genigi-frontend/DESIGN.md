@@ -227,9 +227,11 @@ The radar is the signature geometry: concentric rings, two axes, a red core, and
 Motion is arrival and comprehension, never ambience. The page settles once, reveals sections as they enter the viewport, and gives small cues on interaction. Nothing loops in the reading surface except the radar.
 
 - **Entrance:** hero and page-intro copy rises 12px over `0.6s` on `cubic-bezier(0.16, 1, 0.3, 1)`, with `0.09s` and `0.18s` delays for the paragraph and actions.
-- **Reveal:** sections below the fold move 16px and fade over `0.62s` when they first intersect. Content is only hidden while JavaScript is running (`html.has-js`); without JavaScript, or with reduced motion, everything is visible from the start. The hidden state uses opacity only, so assistive technology can still read the full page before sections are revealed.
+- **Reveal:** sections below the fold move 16px and fade over `0.62s` when they first intersect. Above-fold and already-passed sections are revealed before paint, including after client-side navigation. Content is only hidden while JavaScript is running (`html.has-js`); without JavaScript, or with reduced motion, everything is visible from the start. The hidden state uses opacity only, so assistive technology can still read the full page before sections are revealed.
 - **Theme change:** the theme toggle adds a temporary class for `0.32s`, crossfading background, border, text, fill, stroke, and shadow colors instead of hard-switching the page.
-- **Cues:** the active nav underline draws from the left over `0.22s`; button and text-link arrows advance `3px`; the theme icon rotates and scales in over `0.34s`; the mobile menu drops `8px` over `0.22s`.
+- **Cues:** the active nav underline draws from the left over `0.22s`; text-link and footer rules draw the same way on hover and `:focus-visible`; internal arrows advance `3px`; external icons nudge up-right `2px`; the theme icon rotates and scales in over `0.34s`; the mobile menu drops `8px` over `0.22s`.
+- **Orientation:** a 2px signal line in the sticky header hairline tracks reading progress. It is hidden at the top of the page and has no transition, so it follows scroll directly.
+- **404:** a single 1px signal line scans the outlined `404` once over `0.9s`, then disappears.
 - **Radar:** the sector sweeps once every `6s`; the core stays still so the drawing never pretends to be live data.
 
 **The Reduced-Motion Rule.** Under `prefers-reduced-motion: reduce`, all animations and transitions collapse to `0.01ms`, smooth scrolling is disabled, and every reveal is forced visible. Motion is an enhancement, never a requirement for reading the page.
@@ -246,7 +248,8 @@ Motion is arrival and comprehension, never ambience. The page settles once, reve
 - **Header:** sticky, 76px desktop / 68px mobile of content, plus a 1px bottom hairline. Brand mark, wordmark, and small "Project IGI community" line; the line hides below 350px.
 - **Desktop links:** Barlow Condensed 15px uppercase. Default Ash; hover/in-current Ink. The 2px Signal Red underline draws from the left on hover and stays drawn for the active page.
 - **Actions:** 44px square GitHub icon link and a 44px theme toggle. The theme toggle names the destination theme ("Light" while dark, "Dark" while light).
-- **Mobile:** below 900px the desktop links are replaced by a 44px Menu button. The menu is a full-width disclosure under the header with 56px rows, a GitHub row, the theme toggle, and a status line. Escape closes it and returns focus to the Menu button.
+- **Mobile:** below 900px the desktop links are replaced by a 44px Menu button. The menu is a focus-contained disclosure under the header with 56px rows, a GitHub row, the theme toggle, and a status line. Opening it locks background scroll, dims the page behind it, and makes that page inert; Tab stays inside the header and menu, Escape closes it, and focus returns to the Menu button. Outside taps and viewport changes also close it.
+- **Route changes:** client-side navigation moves focus to `#main` and announces the new page heading through a polite status region. The announcement is silent on first load.
 
 ### Cards / Containers
 - **Rampage card:** Panel Black/Paper ground, 1px hairline, 34px padding, square corners, one soft offset shadow. Title, one-line description, a status line below the copy, and one GitHub link. No label above the title and no nested cards.
@@ -258,7 +261,7 @@ Motion is arrival and comprehension, never ambience. The page settles once, reve
 - **Section status:** no border. A 7px signal dot plus mono 9.5px uppercase text, used for "In development · no release date".
 
 ### Status Strip
-The strip under the hero is static, not a marquee. Signal Red ground, On Signal text, mono 11px uppercase, one set of four community statuses, each with a small signal dot, and an `sr-only` equivalent for assistive technology. The items wrap as whole units with no dangling separators.
+The strip under the hero is static, not a marquee. Signal Red ground, On Signal text, mono 11px uppercase, one set of four community statuses, each with a small signal dot. "Accounts planned" links to the account status page and "Workboard open" links to `/mods`; the other two remain plain text. Items wrap as whole units with no dangling separators, and each item holds a 44px touch height. Focus rings switch to On Signal so they stay visible on the red ground.
 
 ### Account Status
 Login and registration are status pages, not forms. Each page leads with a plain-language headline, an intro, a three-item "What's true today" list, and two actions (Workboard, GitHub). A right-hand status rail repeats "Accounts are not open." There are no input styles in the system because there are no public forms until accounts exist.
@@ -278,6 +281,8 @@ The footer is Footer Black in both modes. Brand mark, one-line community note, G
 - **Do** keep the footer and work band dark in both modes.
 - **Do** use the inline line icons and the clipped brand mark rather than decorative iconography.
 - **Do** keep motion to arrival, reveal, and interaction cues; respect `prefers-reduced-motion`.
+- **Do** give keyboard focus the same rule draw, arrow cue, and container response that hover gets.
+- **Do** mark external links with the diagonal icon and an "opens in a new tab" cue.
 
 ### Don't:
 - **Don't** use gradient text, zero-offset glows, neon halos, or colored text shadows.

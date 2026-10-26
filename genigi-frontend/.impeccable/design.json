@@ -109,7 +109,17 @@
       {
         "name": "state-transition",
         "value": "0.16s–0.22s ease",
-        "purpose": "Hover, focus, nav underline draw, arrow advance, menu drop, and theme-control state changes."
+        "purpose": "Hover and focus cues: nav underline and link-rule draws, internal arrow advance, external icon nudge, menu drop, container focus response, and theme-control state changes."
+      },
+      {
+        "name": "scroll-progress",
+        "value": "direct scroll mapping, no transition",
+        "purpose": "A 2px signal line in the sticky header hairline shows reading position on long pages. Hidden at the top."
+      },
+      {
+        "name": "not-found-scan",
+        "value": "0.9s cubic-bezier(0.16, 1, 0.3, 1), once, 0.3s delay",
+        "purpose": "A single signal line crosses the outlined 404, then disappears. Disabled under reduced motion."
       },
       {
         "name": "radar-loop",
@@ -260,7 +270,9 @@
       "Do keep body copy between 52ch and 64ch and display type at or below 84px.",
       "Do keep the footer and work band dark in both modes.",
       "Do use the inline line icons and the clipped brand mark rather than decorative iconography.",
-      "Do keep motion to arrival, reveal, and interaction cues; respect prefers-reduced-motion."
+      "Do keep motion to arrival, reveal, and interaction cues; respect prefers-reduced-motion.",
+      "Do give keyboard focus the same rule draw, arrow cue, and container response that hover gets.",
+      "Do mark external links with the diagonal icon and an opens-in-a-new-tab cue."
     ],
     "donts": [
       "Don't use gradient text, zero-offset glows, neon halos, or colored text shadows.",

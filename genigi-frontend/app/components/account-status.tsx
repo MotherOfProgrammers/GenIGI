@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { GITHUB_ISSUES_URL } from "../site-config";
-import { ArrowIcon } from "./icons";
+import { ArrowIcon, ExternalIcon } from "./icons";
 
 type AccountStatusProps = {
   title: string;
@@ -34,6 +34,8 @@ export function AccountStatus({ title, intro }: AccountStatusProps) {
                 rel="noreferrer"
               >
                 Read updates on GitHub
+                <ExternalIcon />
+                <span className="sr-only"> (opens in a new tab)</span>
               </a>
             </div>
 

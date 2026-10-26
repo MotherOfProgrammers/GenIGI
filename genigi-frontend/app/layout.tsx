@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Barlow_Condensed, DM_Sans, IBM_Plex_Mono, Tourney } from "next/font/google";
 import { RevealController } from "./components/reveal-controller";
+import { RouteAnnouncer } from "./components/route-announcer";
 import { SiteFooter } from "./components/site-footer";
 import { SiteHeader } from "./components/site-header";
 import { ThemeProvider } from "./components/theme-provider";
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <ThemeProvider>
           <RevealController />
+          <RouteAnnouncer />
           <a className="skip-link" href="#main">
             Skip to content
           </a>

@@ -16,6 +16,7 @@ export function SiteFooter() {
           <nav className="footer-nav" aria-label="Community links">
             <a className="footer-github" href={GITHUB_URL} target="_blank" rel="noreferrer">
               <GitHubIcon /> Source on GitHub
+              <span className="sr-only"> (opens in a new tab)</span>
             </a>
             <Link href="/mods">Workboard</Link>
             <Link href="/login">Account status</Link>

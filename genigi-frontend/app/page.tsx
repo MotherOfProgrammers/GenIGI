@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { GITHUB_ISSUES_URL } from "./site-config";
-import { ArrowIcon } from "./components/icons";
+import { ArrowIcon, ExternalIcon } from "./components/icons";
 
 const rampageFeatures = [
   {
@@ -59,14 +59,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="ticker" aria-label="Community status">
-        <span className="sr-only">
-          No public build yet. Accounts are planned. The workboard is open. Keep the mission intact.
-        </span>
-        <div className="ticker-track" aria-hidden="true">
+      <div className="ticker" role="group" aria-label="Community status">
+        <div className="ticker-track">
           <span>No public build yet</span>
-          <span>Accounts planned</span>
-          <span>Workboard open</span>
+          <Link href="/login">Accounts planned</Link>
+          <Link href="/mods">Workboard open</Link>
           <span>Keep the mission intact</span>
         </div>
       </div>
@@ -177,7 +174,8 @@ export default function HomePage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Discuss on GitHub <ArrowIcon />
+                  Discuss on GitHub <ExternalIcon />
+                  <span className="sr-only"> (opens in a new tab)</span>
                 </a>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GITHUB_ISSUES_URL, developers } from "../site-config";
-import { ArrowIcon } from "../components/icons";
+import { ArrowIcon, ExternalIcon } from "../components/icons";
 
 export const metadata: Metadata = { title: "About the community" };
 
@@ -99,7 +99,8 @@ export default function AboutPage() {
           <p className="people-note">
             Have a useful idea or a fix in mind?{" "}
             <a href={GITHUB_ISSUES_URL} target="_blank" rel="noreferrer">
-              Open an issue on GitHub <ArrowIcon />
+              Open an issue on GitHub <ExternalIcon />
+              <span className="sr-only"> (opens in a new tab)</span>
             </a>
           </p>
         </div>

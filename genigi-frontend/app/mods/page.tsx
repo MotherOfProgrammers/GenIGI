@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { GITHUB_ISSUES_URL } from "../site-config";
-import { ArrowIcon } from "../components/icons";
+import { ExternalIcon } from "../components/icons";
 
 export const metadata: Metadata = { title: "Workboard" };
 
@@ -80,7 +80,8 @@ export default function WorkboardPage() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Discuss this direction <ArrowIcon />
+                    Discuss this direction <ExternalIcon />
+                    <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 </div>
                 <span className="mod-state">{item.status}</span>
@@ -99,7 +100,8 @@ export default function WorkboardPage() {
             target="_blank"
             rel="noreferrer"
           >
-            Open an issue <ArrowIcon />
+            Open an issue <ExternalIcon />
+            <span className="sr-only"> (opens in a new tab)</span>
           </a>
         </div>
       </section>

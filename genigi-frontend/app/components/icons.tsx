@@ -28,6 +28,19 @@ export function ArrowIcon(props: IconProps) {
   );
 }
 
+export function ExternalIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M8 4H4v12h12v-4M11 3h6v6M17 3l-8 8"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="square"
+      />
+    </svg>
+  );
+}
+
 export function SunIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
