@@ -12,14 +12,6 @@ export function MarkIcon(props: IconProps) {
   );
 }
 
-export function DiscordIcon(props: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-      <path d="M19.3 5.1A17 17 0 0 0 15 3.8l-.5 1a15.8 15.8 0 0 0-5 0l-.5-1a17 17 0 0 0-4.3 1.3C2 9.1 1.3 13 1.7 16.9a17.3 17.3 0 0 0 5.3 2.7l1.1-1.8-1.7-.8.4-.3a12.3 12.3 0 0 0 10.4 0l.4.3-1.7.8 1.1 1.8a17.3 17.3 0 0 0 5.3-2.7c.5-4.5-.8-8.4-3-11.8ZM8.8 14.4c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.4 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z" fill="currentColor" />
-    </svg>
-  );
-}
-
 export function GitHubIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}>
@@ -32,6 +24,49 @@ export function ArrowIcon(props: IconProps) {
   return (
     <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" {...props}>
       <path d="M3 10h13M10 4l6 6-6 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="square" />
+    </svg>
+  );
+}
+
+export function SunIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.7" />
+      <path
+        d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="square"
+      />
+    </svg>
+  );
+}
+
+export function MoonIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M20.4 14.2A8.6 8.6 0 0 1 9.8 3.6 8.7 8.7 0 1 0 20.4 14.2Z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function MenuIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="1.7" strokeLinecap="square" />
+    </svg>
+  );
+}
+
+export function CloseIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path d="m5 5 14 14M19 5 5 19" stroke="currentColor" strokeWidth="1.7" strokeLinecap="square" />
     </svg>
   );
 }
