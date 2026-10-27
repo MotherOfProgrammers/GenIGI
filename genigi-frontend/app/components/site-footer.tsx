@@ -18,8 +18,8 @@ export function SiteFooter() {
               <GitHubIcon /> Source on GitHub
               <span className="sr-only"> (opens in a new tab)</span>
             </a>
-            <Link href="/mods">Workboard</Link>
-            <Link href="/login">Account status</Link>
+            <Link href="/mods">Mods</Link>
+            <Link href="/auth?mode=signin">Sign in</Link>
           </nav>
         </div>
         <div className="footer-bottom">

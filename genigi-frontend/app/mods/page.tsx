@@ -2,33 +2,36 @@ import type { Metadata } from "next";
 import { GITHUB_ISSUES_URL } from "../site-config";
 import { ExternalIcon } from "../components/icons";
 
-export const metadata: Metadata = { title: "Workboard" };
+export const metadata: Metadata = { title: "Mods" };
 
 const directions = [
   {
-    number: "01",
-    title: "A smoother return to the field",
+    title: "Multiplayer, restored",
     description:
-      "Exploring compatibility and quality-of-life improvements that can help the original game feel at home on current setups. This is a community direction, not a released mod.",
-    status: "Direction · early",
+      "A restored multiplayer layer for Project IGI 2 is in the IGI-Rampage repository and has been put through network tests. It is development work, not a player build.",
+    status: "Early testing · repo only",
   },
   {
-    number: "02",
-    title: "Clarity without compromise",
+    title: "Weapon data and textures",
     description:
-      "Thinking through visual and interface refinements that respect the original atmosphere instead of smoothing away its identity.",
+      "Parsers that read the game’s weapon data and textures, with decoded output and higher-quality weapon silhouettes kept in the repository’s out directory.",
+    status: "Tooling · in the repo",
+  },
+  {
+    title: "A new game interface",
+    description:
+      "Interface work written in C++, under way and not yet something you can install.",
     status: "Work in progress",
   },
   {
-    number: "03",
     title: "The campaign, unchanged",
     description:
-      "Any future improvements should protect the story, characters, mission order, and grounded tone that make IGI feel like IGI.",
-    status: "Community principle",
+      "The single-player story, characters, and mission order are not the target. IGI-Rampage is about multiplayer.",
+    status: "Project principle",
   },
 ];
 
-export default function WorkboardPage() {
+export default function ModsPage() {
   return (
     <main id="main" tabIndex={-1}>
       <div className="wrap page-intro animate-in">
@@ -68,9 +71,11 @@ export default function WorkboardPage() {
           </div>
 
           <div className="mod-list">
-            {directions.map((item) => (
-              <article className="mod-row" key={item.number}>
-                <span className="mod-number">{item.number} / 03</span>
+            {directions.map((item, index) => (
+              <article className="mod-row" key={item.title}>
+                <span className="mod-number">
+                  {String(index + 1).padStart(2, "0")} / {String(directions.length).padStart(2, "0")}
+                </span>
                 <div>
                   <h2>{item.title}</h2>
                   <p>{item.description}</p>

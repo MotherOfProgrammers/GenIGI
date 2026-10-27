@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { authClient } from "../auth-client";
 import { GITHUB_URL } from "../site-config";
 import { CloseIcon, GitHubIcon, MarkIcon, MenuIcon } from "./icons";
 import { ScrollProgress } from "./scroll-progress";
@@ -16,9 +17,8 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { href: "/", label: "Home" },
-  { href: "/mods", label: "Workboard" },
+  { href: "/mods", label: "Mods" },
   { href: "/about", label: "About" },
-  { href: "/login", label: "Accounts", aliases: ["/register"] },
 ];
 
 function normalizePath(path: string) {
@@ -27,10 +27,17 @@ function normalizePath(path: string) {
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const { data: session } = authClient.useSession();
+  const signedIn = Boolean(session?.user);
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  async function signOut() {
+    setMenuOpen(false);
+    await authClient.signOut();
+  }
 
   useEffect(() => {
     setMenuOpen(false);
@@ -145,6 +152,18 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          {signedIn ? (
+            <>
+              <span className="nav-user">{session?.user.name}</span>
+              <button className="button secondary nav-button" type="button" onClick={signOut}>
+                Sign out
+              </button>
+            </>
+          ) : (
+            <Link className="button nav-button" href="/auth?mode=signup">
+              Register
+            </Link>
+          )}
           <a
             className="icon-link"
             href={GITHUB_URL}
@@ -200,6 +219,15 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          {signedIn ? (
+            <button type="button" onClick={signOut}>
+              Sign out{session?.user.name ? ` (${session.user.name})` : ""}
+            </button>
+          ) : (
+            <Link href="/auth?mode=signup" onClick={() => setMenuOpen(false)}>
+              Register
+            </Link>
+          )}
           <a
             href={GITHUB_URL}
             target="_blank"

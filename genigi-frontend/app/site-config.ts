@@ -14,3 +14,11 @@ export const developers = [
   "NadilaXD",
   "PasinduKavishka",
 ];
+
+export const GITHUB_OWNER = "MotherOfProgrammers";
+
+/** Repositories whose contributors are shown on the home page. */
+export const CONTRIBUTOR_REPOS = [
+  { name: "GenIGI", label: "Website" },
+  { name: "IGI-II", label: "IGI-Rampage" },
+] as const;

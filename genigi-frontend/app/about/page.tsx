@@ -110,7 +110,7 @@ export default function AboutPage() {
         <div className="wrap work-band-inner" data-reveal>
           <h2 className="display">Come see what’s taking shape.</h2>
           <Link className="button" href="/mods">
-            Open the workboard <ArrowIcon />
+            See the mods <ArrowIcon />
           </Link>
         </div>
       </section>

@@ -17,14 +17,14 @@ export default function NotFound() {
           </h1>
           <p>
             That page doesn’t exist. It may have moved, or the link might be out of date. The
-            workboard and the front page are both still here.
+            mods page and the front page are both still here.
           </p>
           <div className="not-found-actions">
             <Link className="button" href="/">
               Back to home <ArrowIcon />
             </Link>
             <Link className="button secondary" href="/mods">
-              See the workboard
+              See the mods
             </Link>
           </div>
         </section>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { GITHUB_ISSUES_URL } from "./site-config";
 import { ArrowIcon, ExternalIcon } from "./components/icons";
+import { Contributors } from "./components/contributors";
 
 const rampageFeatures = [
   {
@@ -52,7 +53,7 @@ export default function HomePage() {
             <span className="radar-axis" />
             <span className="radar-axis horizontal" />
             <span className="radar-core" />
-            <span className="radar-tag one">Workboard open</span>
+            <span className="radar-tag one">Mods in progress</span>
             <span className="radar-tag two">Original story</span>
             <span className="radar-tag three">Community built</span>
           </div>
@@ -62,8 +63,8 @@ export default function HomePage() {
       <div className="ticker" role="group" aria-label="Community status">
         <div className="ticker-track">
           <span>No public build yet</span>
-          <Link href="/login">Accounts planned</Link>
-          <Link href="/mods">Workboard open</Link>
+          <Link href="/auth?mode=signin">Accounts open</Link>
+          <Link href="/mods">Mods in progress</Link>
           <span>Keep the mission intact</span>
         </div>
       </div>
@@ -196,6 +197,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <Contributors />
+
       <section className="section">
         <div className="wrap" data-reveal>
           <div className="section-heading">
@@ -223,11 +226,11 @@ export default function HomePage() {
             <article className="value">
               <h3>Stay in the loop</h3>
               <p>
-                Community accounts are planned, but not live yet. We’ll be straight with you when
-                that changes.
+                Community accounts are open. Sign up with an email or Google; an account holds
+                only your name and sign-in.
               </p>
-              <Link className="text-link" href="/login">
-                Account status <ArrowIcon />
+              <Link className="text-link" href="/auth?mode=signin">
+                Sign in <ArrowIcon />
               </Link>
             </article>
           </div>

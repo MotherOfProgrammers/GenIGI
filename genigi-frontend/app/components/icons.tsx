@@ -83,3 +83,16 @@ export function CloseIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function GoogleIcon(props: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M19.2 6.6A8.5 8.5 0 1 0 20.5 12H12.2"
+        stroke="currentColor"
+        strokeWidth="1.9"
+        strokeLinecap="square"
+      />
+    </svg>
+  );
+}
