@@ -2,6 +2,7 @@ import Link from "next/link";
 import { GITHUB_ISSUES_URL } from "./site-config";
 import { ArrowIcon, ExternalIcon } from "./components/icons";
 import { Contributors } from "./components/contributors";
+import { HeroReticle } from "./components/hero-reticle";
 
 const rampageFeatures = [
   {
@@ -47,16 +48,30 @@ export default function HomePage() {
             </div>
           </div>
           <div className="radar" aria-hidden="true">
+            <span className="radar-bracket tl" />
+            <span className="radar-bracket tr" />
+            <span className="radar-bracket bl" />
+            <span className="radar-bracket br" />
+            <span className="radar-dial" />
             <span className="radar-ring" />
             <span className="radar-ring" />
             <span className="radar-ring" />
             <span className="radar-axis" />
             <span className="radar-axis horizontal" />
+            <span className="radar-blip one" />
+            <span className="radar-blip two" />
+            <span className="radar-blip three" />
             <span className="radar-core" />
             <span className="radar-tag one">Mods in progress</span>
             <span className="radar-tag two">Original story</span>
             <span className="radar-tag three">Community built</span>
           </div>
+        </div>
+        <HeroReticle />
+        <div className="hero-hud" aria-hidden="true">
+          <span>Briefing</span>
+          <span className="hero-hud-bar" />
+          <span>Scroll</span>
         </div>
       </section>
 
@@ -153,6 +168,7 @@ export default function HomePage() {
                       <strong>{feature.title}</strong>
                       <p>{feature.body}</p>
                     </div>
+                    <span className="rampage-tag">Exploring</span>
                   </li>
                 ))}
               </ol>

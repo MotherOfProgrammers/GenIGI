@@ -2763,3 +2763,817 @@ a[target="_blank"]:focus-visible svg {
     }
   }
 }
+
+/* Arcade layer — mission-HUD treatment for the home page.
+   Chamfered panels echo the clipped brand mark. Everything decorative stays honest:
+   no invented stats, only the statuses the page already states. */
+
+.home-hero,
+.upcoming-section,
+.work-band {
+  --cut: 16px;
+}
+
+.button:not(.secondary) {
+  position: relative;
+  overflow: hidden;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+/* clip-path would cut the focus outline off, so focus drops the chamfer. */
+.button:not(.secondary):focus-visible {
+  clip-path: none;
+}
+
+.button:not(.secondary)::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.38), transparent);
+  translate: -140% 0;
+  skew: -18deg;
+  pointer-events: none;
+}
+
+.button.secondary {
+  position: relative;
+}
+
+/* Hero HUD */
+
+.home-hero {
+  padding-bottom: 28px;
+}
+
+.hero-copy h1 span::after {
+  content: "";
+  display: inline-block;
+  width: 0.34em;
+  height: 0.12em;
+  margin-left: 0.12em;
+  background: var(--signal);
+  vertical-align: baseline;
+}
+
+.hero-reticle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.home-hero[data-aim="on"] .hero-reticle {
+  opacity: 1;
+}
+
+.hero-reticle span {
+  position: absolute;
+  top: -26px;
+  left: -26px;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--signal);
+  border-radius: 50%;
+}
+
+.hero-reticle span::before,
+.hero-reticle span::after {
+  content: "";
+  position: absolute;
+  background: var(--signal);
+}
+
+.hero-reticle span::before {
+  top: -9px;
+  bottom: -9px;
+  left: 50%;
+  width: 1px;
+  mask: linear-gradient(transparent 0 9px, #000 9px calc(50% - 6px), transparent calc(50% - 6px) calc(50% + 6px), #000 calc(50% + 6px) calc(100% - 9px), transparent calc(100% - 9px));
+}
+
+.hero-reticle span::after {
+  right: -9px;
+  left: -9px;
+  top: 50%;
+  height: 1px;
+  mask: linear-gradient(90deg, transparent 0 9px, #000 9px calc(50% - 6px), transparent calc(50% - 6px) calc(50% + 6px), #000 calc(50% + 6px) calc(100% - 9px), transparent calc(100% - 9px));
+}
+
+.hero-hud {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: min(1180px, calc(100% - clamp(32px, 5vw, 64px)));
+  margin-inline: auto;
+  color: var(--faint);
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.hero-hud-bar {
+  position: relative;
+  flex: 1 1 auto;
+  height: 1px;
+  background: var(--line);
+}
+
+.hero-hud-bar::after {
+  content: "";
+  position: absolute;
+  inset: -1px 0;
+  background: var(--signal);
+  transform: scaleX(0.04);
+  transform-origin: left;
+}
+
+.radar {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.radar-bracket {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border: 0 solid var(--ink);
+  opacity: 0.8;
+}
+
+.radar-bracket.tl {
+  top: 0;
+  left: 0;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.radar-bracket.tr {
+  top: 0;
+  right: 0;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+
+.radar-bracket.bl {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+.radar-bracket.br {
+  right: 0;
+  bottom: 0;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+}
+
+.radar-dial {
+  position: absolute;
+  inset: 3%;
+  border-radius: 50%;
+  background: repeating-conic-gradient(var(--line-strong) 0 0.7deg, transparent 0.7deg 7.5deg);
+  mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 calc(100% - 7px));
+}
+
+.radar::before {
+  background: conic-gradient(
+    from 205deg,
+    transparent 0deg 286deg,
+    color-mix(in srgb, var(--signal) 40%, transparent) 356deg,
+    var(--signal) 360deg
+  );
+  mask: radial-gradient(circle, #000 0 98%, transparent 100%);
+}
+
+.radar-blip {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: var(--signal);
+}
+
+.radar-blip::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid var(--signal);
+  opacity: 0;
+}
+
+.radar-blip.one {
+  top: 28%;
+  right: 24%;
+}
+
+.radar-blip.two {
+  bottom: 30%;
+  left: 21%;
+}
+
+.radar-blip.three {
+  right: 30%;
+  bottom: 14%;
+}
+
+.radar-core::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid var(--signal);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+/* Status strip */
+
+.ticker {
+  position: relative;
+  overflow: hidden;
+}
+
+.ticker::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 22%;
+  background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.22), transparent);
+  translate: -120% 0;
+  pointer-events: none;
+}
+
+/* Hierarchy: headlines step up, supporting copy steps down. */
+
+.section-heading h2 {
+  max-width: 720px;
+  font-size: clamp(44px, 6.2vw, 82px);
+  line-height: 0.88;
+}
+
+.section-heading p {
+  max-width: 34ch;
+  font-size: 14px;
+}
+
+.work-band h2 {
+  max-width: 14ch;
+  font-size: clamp(44px, 6.4vw, 88px);
+  line-height: 0.88;
+}
+
+.work-band::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 26%;
+  background: linear-gradient(100deg, transparent, color-mix(in srgb, var(--signal) 14%, transparent), transparent);
+  translate: -120% 0;
+  pointer-events: none;
+}
+
+/* Chamfered panels */
+
+.principle-art,
+.principle-row,
+.rampage-list li,
+.value {
+  clip-path: polygon(var(--cut, 16px) 0, 100% 0, 100% calc(100% - var(--cut, 16px)), calc(100% - var(--cut, 16px)) 100%, 0 100%, 0 var(--cut, 16px));
+}
+
+.principles {
+  --cut: 18px;
+}
+
+.principle-art {
+  border: 0;
+}
+
+.principle-art::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--line-strong);
+  opacity: 0;
+}
+
+.principle-list {
+  gap: 12px;
+}
+
+.principle-row,
+.principle-row:first-child {
+  position: relative;
+  grid-template-columns: 76px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 22px 26px 22px 20px;
+  border: 0;
+  background: var(--panel);
+  transition: background-color 0.25s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.principle-row::after,
+.rampage-list li::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: var(--signal);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.principle-number {
+  color: var(--line-strong);
+  font-family: var(--font-display), Tourney, "Barlow Condensed", Impact, sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  transition: color 0.25s ease;
+}
+
+.principle-row:hover .principle-number,
+.principle-row:focus-within .principle-number {
+  color: var(--signal);
+}
+
+.principle-row:hover::after,
+.principle-row:focus-within::after,
+.rampage-list li:hover::after {
+  transform: scaleX(1);
+}
+
+.rampage-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.rampage-list li {
+  position: relative;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px 18px 18px;
+  border: 0;
+  background: var(--panel);
+  transition: background-color 0.25s ease;
+}
+
+.rampage-index {
+  color: var(--line-strong);
+  font-family: var(--font-display), Tourney, "Barlow Condensed", Impact, sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  transition: color 0.25s ease;
+}
+
+.rampage-list li:hover .rampage-index {
+  color: var(--signal);
+}
+
+.rampage-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 9px;
+  border: 1px solid var(--line-strong);
+  color: var(--muted);
+  font-family: var(--font-mono), "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.rampage-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--signal);
+}
+
+.rampage-visual {
+  filter: drop-shadow(0 20px 24px rgb(0 0 0 / 0.3));
+}
+
+:root[data-theme="light"] .rampage-visual {
+  filter: drop-shadow(0 20px 24px rgb(23 20 15 / 0.12));
+}
+
+.rampage-card {
+  position: relative;
+  border: 0;
+  box-shadow: none;
+  clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%, 0 22px);
+}
+
+.rampage-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: var(--signal);
+}
+
+.rampage-card h3 {
+  font-size: clamp(34px, 3.6vw, 46px);
+  line-height: 0.92;
+}
+
+/* Values */
+
+.values-grid {
+  --cut: 18px;
+  gap: 14px;
+  border: 0;
+  counter-reset: value;
+}
+
+.value,
+.value + .value {
+  padding: 26px clamp(22px, 2.6vw, 30px) 28px;
+  border: 0;
+  background: var(--panel);
+  counter-increment: value;
+  transition: background-color 0.25s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.value::before {
+  content: counter(value, decimal-leading-zero);
+  margin-bottom: 18px;
+  color: var(--line-strong);
+  font-family: var(--font-display), Tourney, "Barlow Condensed", Impact, sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 0.9;
+  transition: color 0.25s ease;
+}
+
+.value:hover::before,
+.value:focus-within::before {
+  color: var(--signal);
+}
+
+.value::after,
+.value + .value::after {
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: 0;
+}
+
+.value:hover::after {
+  transform: scaleX(1);
+}
+
+@media (hover: hover) {
+  .principle-row:hover,
+  .value:hover {
+    background: var(--panel-soft);
+    transform: translateY(-3px);
+  }
+}
+
+/* Browser surfaces */
+
+html {
+  scrollbar-color: var(--line-strong) var(--paper);
+}
+
+@media (max-width: 900px) {
+  .radar-bracket {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-hud {
+    display: none;
+  }
+
+  .home-hero {
+    padding-bottom: 0;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .principle-row,
+  .principle-row:first-child {
+    grid-template-columns: 52px minmax(0, 1fr);
+    padding: 18px 18px 18px 14px;
+  }
+
+  .principle-number {
+    font-size: 40px;
+  }
+
+  .rampage-list li {
+    grid-template-columns: 38px minmax(0, 1fr);
+    padding: 16px 16px 16px 12px;
+  }
+
+  .rampage-tag {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+/* Arcade motion — arrivals, pings, scans, scroll-linked drift. */
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes sheen {
+    to {
+      translate: 420% 0;
+    }
+  }
+
+  @keyframes sweep-across {
+    0%,
+    62% {
+      translate: -120% 0;
+    }
+    100% {
+      translate: 520% 0;
+    }
+  }
+
+  @keyframes blip-ping {
+    0% {
+      scale: 1;
+      opacity: 0.9;
+    }
+    70%,
+    100% {
+      scale: 3.4;
+      opacity: 0;
+    }
+  }
+
+  @keyframes blip-hit {
+    0%,
+    100% {
+      opacity: 0.35;
+    }
+    12% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes core-ping {
+    0% {
+      scale: 1;
+      opacity: 0.8;
+    }
+    100% {
+      scale: 4.2;
+      opacity: 0;
+    }
+  }
+
+  @keyframes spin {
+    to {
+      rotate: 360deg;
+    }
+  }
+
+  @keyframes bracket-in {
+    from {
+      opacity: 0;
+      scale: 1.35;
+    }
+    to {
+      opacity: 0.8;
+      scale: 1;
+    }
+  }
+
+  @keyframes caret {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes caret-rest {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scan-down {
+    0% {
+      translate: 0 0;
+      opacity: 0;
+    }
+    10%,
+    90% {
+      opacity: 1;
+    }
+    100% {
+      translate: 0 420px;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fire {
+    from {
+      scale: 1;
+    }
+    40% {
+      scale: 0.6;
+    }
+    to {
+      scale: 1;
+    }
+  }
+
+  @keyframes hud-fill {
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes hero-out-copy {
+    to {
+      translate: 0 -36px;
+    }
+  }
+
+  @keyframes hero-out-radar {
+    to {
+      translate: 0 44px;
+      scale: 0.94;
+    }
+  }
+
+  @keyframes tag-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .button:not(.secondary):hover::after {
+    animation: sheen 0.7s var(--ease-out) both;
+  }
+
+  .button {
+    transition:
+      background-size 0.38s var(--ease-out),
+      border-color 0.18s ease,
+      color 0.18s ease,
+      transform 0.18s var(--ease-out);
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+  }
+
+  .button:active {
+    transform: translateY(1px) scale(0.98);
+  }
+
+  .hero-copy h1 span::after {
+    animation: caret 1.1s steps(1) 1.4s 8, caret-rest 0s 10.4s both;
+  }
+
+  .home-hero[data-aim="on"] .radar {
+    transform: perspective(900px) rotateY(calc(var(--aim-x, 0) * 8deg)) rotateX(calc(var(--aim-y, 0) * -8deg));
+  }
+
+  .hero-reticle.is-fire span {
+    animation: fire 0.35s var(--ease-out);
+  }
+
+  .radar-bracket {
+    animation: bracket-in 0.7s var(--ease-out) 0.9s both;
+  }
+
+  .radar-dial {
+    animation: spin 90s linear infinite;
+  }
+
+  .radar-blip {
+    animation: blip-hit 6s linear infinite;
+  }
+
+  .radar-blip::after {
+    animation: blip-ping 6s ease-out infinite;
+  }
+
+  .radar-blip.one {
+    animation-delay: 1.1s;
+  }
+  .radar-blip.one::after {
+    animation-delay: 1.1s;
+  }
+  .radar-blip.two {
+    animation-delay: 3.6s;
+  }
+  .radar-blip.two::after {
+    animation-delay: 3.6s;
+  }
+  .radar-blip.three {
+    animation-delay: 5.1s;
+  }
+  .radar-blip.three::after {
+    animation-delay: 5.1s;
+  }
+
+  .radar-core::after {
+    animation: core-ping 2.4s ease-out 1.2s infinite;
+  }
+
+  .radar-tag::before {
+    animation: tag-pulse 2.4s ease-in-out infinite;
+  }
+
+  .ticker::after {
+    animation: sweep-across 7s linear 2s infinite;
+  }
+
+  .work-band::before {
+    animation: sweep-across 8s linear infinite;
+  }
+
+  .principle-art::before {
+    animation: scan-down 5s linear infinite;
+  }
+
+  .contour {
+    animation: spin 120s linear infinite;
+  }
+
+  .rampage-tag::before {
+    animation: tag-pulse 2.2s ease-in-out infinite;
+  }
+
+  .rampage-list li:nth-child(2) .rampage-tag::before {
+    animation-delay: 0.3s;
+  }
+  .rampage-list li:nth-child(3) .rampage-tag::before {
+    animation-delay: 0.6s;
+  }
+  .rampage-list li:nth-child(4) .rampage-tag::before {
+    animation-delay: 0.9s;
+  }
+
+  html.has-js [data-reveal]:not(.is-revealed) :is(.rampage-card, .principle-art) {
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%, 50% 100%, 50% 0);
+  }
+
+  :is(.rampage-card, .principle-art) {
+    transition: clip-path 0.9s var(--ease-out);
+  }
+
+  @supports (animation-timeline: scroll()) {
+    .hero-copy {
+      animation: hero-out-copy linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 600px;
+    }
+
+    .radar {
+      animation: hero-out-radar linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 600px;
+    }
+
+    .hero-hud-bar::after {
+      animation: hud-fill linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 600px;
+    }
+  }
+}
