@@ -25,6 +25,7 @@ try {
         ...process.env,
         GITHUB_PAGES: "true",
         NEXT_PUBLIC_STATIC_HOSTING: "1",
+        NEXT_PUBLIC_BASE_PATH: "/GenIGI",
       },
     },
   );
