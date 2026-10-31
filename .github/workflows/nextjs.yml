@@ -56,7 +56,9 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-          cache-dependency-path: genigi-frontend/${{ steps.detect-package-manager.outputs.manager == 'yarn' && 'yarn.lock' || 'package-lock.json' }}
+          cache-dependency-path: |
+            genigi-frontend/package-lock.json
+            genigi-frontend/yarn.lock
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
