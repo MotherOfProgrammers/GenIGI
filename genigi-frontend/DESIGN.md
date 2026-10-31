@@ -1,298 +1,328 @@
 ---
 name: GenIGI
-description: "A tactical field dossier for Project IGI: dark terminal, warm paper, one signal red."
+description: "COLD SIGNAL — a night-terminal cyberpunk HUD for a player-run Project IGI community."
 colors:
-  tactical-black: "#080807"
-  panel-black: "#12110e"
-  sunken-black: "#0b0a09"
-  footer-black: "#050504"
-  warm-white: "#f2efe8"
-  ash: "#b7b2a8"
-  faint-ash: "#8d887e"
-  signal-red: "#ff2f23"
-  signal-red-hover: "#ff5a4e"
-  on-signal: "#0a0908"
-  hairline-dark: "#2b2822"
-  hairline-dark-strong: "#4f4a42"
-  paper: "#f2efe7"
-  panel-paper: "#fbf8f0"
-  sunken-paper: "#e9e4d7"
-  ink: "#17140f"
-  muted-ink: "#5b554b"
-  faint-ink: "#6b655b"
-  signal-red-light: "#c0140a"
-  hairline-paper: "#d0c8b8"
-  hairline-paper-strong: "#8f8678"
+  signal-red: "#ff2d2d"
+  signal-hot: "#ff7066"
+  trace-cyan: "#22e8ff"
+  noise-magenta: "#ff2ba6"
+  void: "#04050a"
+  night: "#07080f"
+  panel: "#0a0c15"
+  panel-raised: "#0e111c"
+  sunken: "#04050b"
+  ink: "#f2f5fb"
+  ink-muted: "#a4aec4"
+  ink-faint: "#727d95"
+  hairline: "#96afff24"
+  on-signal: "#0a0206"
+  daylight-ground: "#f1f4fa"
+  daylight-ink: "#05070d"
+  daylight-muted: "#45516a"
+  daylight-faint: "#657089"
+  daylight-signal: "#d0120c"
+  daylight-cyan: "#00748a"
+  daylight-magenta: "#ac0068"
+  focus-daylight: "#00626f"
+  footer-ink: "#f2f5fb"
+  footer-link: "#c7cfdf"
+  footer-muted: "#9aa4bb"
+  footer-faint: "#78829a"
 typography:
   display:
     fontFamily: "Tourney, Barlow Condensed, Impact, sans-serif"
-    fontSize: "clamp(2.5rem, 6.6vw, 5.25rem)"
+    fontSize: "clamp(2.4rem, 7.2vw, 6rem)"
+    fontWeight: 700
+    lineHeight: 0.86
+    letterSpacing: "-0.025em"
+  page-title:
+    fontFamily: "Tourney, Barlow Condensed, Impact, sans-serif"
+    fontSize: "clamp(2.4rem, 5.6vw, 4.6rem)"
+    fontWeight: 700
+    lineHeight: 0.9
+    letterSpacing: "-0.02em"
+  headline:
+    fontFamily: "Tourney, Barlow Condensed, Impact, sans-serif"
+    fontSize: "clamp(36px, 5.2vw, 68px)"
+    fontWeight: 700
+    lineHeight: 0.9
+    letterSpacing: "-0.02em"
+  band:
+    fontFamily: "Tourney, Barlow Condensed, Impact, sans-serif"
+    fontSize: "clamp(40px, 6vw, 82px)"
     fontWeight: 700
     lineHeight: 0.86
     letterSpacing: "-0.015em"
-  headline:
+  title-lg:
     fontFamily: "Tourney, Barlow Condensed, Impact, sans-serif"
-    fontSize: "clamp(2.375rem, 5vw, 4.125rem)"
+    fontSize: "30px"
     fontWeight: 700
-    lineHeight: 0.9
-    letterSpacing: "-0.01em"
+    lineHeight: 1.02
+    letterSpacing: "0.01em"
   title:
     fontFamily: "Barlow Condensed, Impact, sans-serif"
-    fontSize: "1.5rem"
+    fontSize: "22px"
     fontWeight: 600
-    lineHeight: 1.05
-    letterSpacing: "0.015em"
-  nav:
-    fontFamily: "Barlow Condensed, Impact, sans-serif"
-    fontSize: "0.9375rem"
-    fontWeight: 600
-    lineHeight: 1
-    letterSpacing: "0.08em"
+    lineHeight: 1.02
+    letterSpacing: "0.02em"
+  body-lg:
+    fontFamily: "DM Sans, system-ui, sans-serif"
+    fontSize: "17px"
+    fontWeight: 400
+    lineHeight: 1.68
+    letterSpacing: "0em"
   body:
     fontFamily: "DM Sans, system-ui, sans-serif"
-    fontSize: "1rem"
+    fontSize: "16px"
     fontWeight: 400
     lineHeight: 1.65
     letterSpacing: "0em"
+  body-sm:
+    fontFamily: "DM Sans, system-ui, sans-serif"
+    fontSize: "15px"
+    fontWeight: 400
+    lineHeight: 1.6
+    letterSpacing: "0em"
   label:
     fontFamily: "IBM Plex Mono, monospace"
-    fontSize: "0.6875rem"
-    fontWeight: 500
+    fontSize: "11px"
+    fontWeight: 600
     lineHeight: 1.5
-    letterSpacing: "0.08em"
+    letterSpacing: "0.16em"
+  micro:
+    fontFamily: "IBM Plex Mono, monospace"
+    fontSize: "10px"
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: "0.2em"
 rounded:
-  sharp: "0px"
-  full: "9999px"
+  square: "0px"
+  control-cut: "12px"
+  panel-cut: "14px"
 spacing:
-  xs: "4px"
-  sm: "8px"
-  md: "16px"
-  lg: "24px"
-  xl: "32px"
-  2xl: "48px"
-  3xl: "64px"
-  section: "clamp(64px, 8vw, 108px)"
+  page-gutter: "clamp(32px, 5vw, 72px)"
+  section: "clamp(72px, 9vw, 128px)"
+  block: "clamp(36px, 5vw, 64px)"
+  card: "32px 28px"
+  stack-tight: "14px"
+  stack: "26px"
+  seam: "1px"
 components:
   button-primary:
     backgroundColor: "{colors.signal-red}"
     textColor: "{colors.on-signal}"
     typography: "{typography.label}"
-    rounded: "{rounded.sharp}"
-    padding: "0 20px"
-    height: "48px"
+    rounded: "{rounded.control-cut}"
+    padding: "0 24px"
+    height: "50px"
   button-primary-hover:
-    backgroundColor: "{colors.signal-red-hover}"
+    backgroundColor: "{colors.signal-hot}"
     textColor: "{colors.on-signal}"
+    typography: "{typography.label}"
+    rounded: "{rounded.control-cut}"
+    height: "50px"
   button-secondary:
     backgroundColor: "transparent"
-    textColor: "{colors.warm-white}"
+    textColor: "{colors.ink}"
     typography: "{typography.label}"
-    rounded: "{rounded.sharp}"
-    padding: "0 20px"
+    rounded: "{rounded.control-cut}"
+    padding: "0 24px"
+    height: "50px"
+  field:
+    backgroundColor: "{colors.sunken}"
+    textColor: "{colors.ink}"
+    typography: "{typography.body-sm}"
+    rounded: "{rounded.square}"
+    padding: "0 14px"
     height: "48px"
-  nav-link:
-    backgroundColor: "transparent"
-    textColor: "{colors.warm-white}"
-    typography: "{typography.nav}"
-    rounded: "{rounded.sharp}"
-    height: "44px"
-  status-chip:
-    backgroundColor: "transparent"
-    textColor: "{colors.ash}"
+  panel:
+    backgroundColor: "{colors.panel}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.square}"
+    padding: "32px 28px"
+  tag:
+    backgroundColor: "{colors.void}"
+    textColor: "{colors.ink-muted}"
     typography: "{typography.label}"
-    rounded: "{rounded.sharp}"
-    padding: "6px 9px"
-  panel-card:
-    backgroundColor: "{colors.panel-black}"
-    textColor: "{colors.warm-white}"
-    rounded: "{rounded.sharp}"
-    padding: "34px"
+    rounded: "{rounded.square}"
+    padding: "3px 7px"
 ---
 
 # Design System: GenIGI
 
 ## Overview
 
-**Creative North Star: "The Field Dossier"**
+**Creative North Star: "COLD SIGNAL"**
 
-GenIGI looks like a briefing left on the table after a long operation: black terminal surfaces, warm paper, hard rules, and type that behaves like stencilled signage. The interface never pretends to be a game HUD or a sci-fi dashboard. It is an editorial community archive for people who care about Project IGI, with the patience to say what is real and what is still being worked out.
+The site behaves like a field terminal left running in a dark room: a perspective grid on the floor, a radar sweeping the corner, one red channel marker, and a thin HUD frame that never quite stops being an instrument. It is not game-marketing chrome and not retro-CRT nostalgia. It is a working console for a community that is honest about being early, so the interface looks live without pretending anything is finished.
 
-The two modes are one system, not two skins. Dark is the default field-terminal reading of the dossier; light is the same pages printed on warm paper. Both share one layout, one grid, one type hierarchy, one red signal, and the same flat, hairline-driven surfaces. Footer and work-band surfaces stay dark in both modes so the page always has an anchor.
+The world is built from three planes. **Terrain** is the full-bleed hero canvas: grid, horizon glow, radar ping, scanline. **Instrument** is the panel language: hairline frames, cut corners, status dots, mono labels, a marquee of verified facts. **Dossier** is the readable layer: condensed uppercase display type and a calm sans body, on a surface dark enough that the red reads as light rather than paint.
 
-The voice is specific and unsentimental: short headings, plain status copy, no invented release dates, no fake terminal output. The design supports that honesty by keeping decoration to a minimum. One radar drawing, one clipped brand mark, one red signal.
+Light mode is not paper. It is the same instrument under daylight: the ground goes cool white, the ink goes near-black, the accents darken to print weight, and the bloom collapses to a clean rim. Geometry, spacing, and hierarchy are identical in both modes; only the light physics changes.
 
 **Key Characteristics:**
-- Two honest modes: tactical black by default, warm paper dossiers on request.
-- Tourney display type, set only at sign-scale.
-- Barlow Condensed for subheads and navigation; DM Sans for reading; IBM Plex Mono for metadata.
-- Flat surfaces, 1px hairlines, square corners.
-- Signal red reserved for action, status, and wayfinding.
-- Status-first content: no dead forms, no fake downloads, no invented dates.
-- A restrained motion layer: one hero rise, gated scroll reveals, and small directional cues.
+- Night-terminal default with a fully remapped daylight HUD.
+- Signal red is an event, not a surface.
+- Cyan and magenta appear only as traces: sweeps, rings, secondary glows.
+- Cut corners and 1px seams instead of rounded cards and gaps.
+- One WebGL canvas carries the hero; CSS carries everything else.
+- Mono type is reserved for measurement, status, and controls.
+- Every strong effect has a static counterpart under `prefers-reduced-motion`.
 
 ## Colors
 
-The palette is a two-mode neutral field interrupted by one live red. It is deliberately small: paper, ink, ash, hairline, signal.
+A near-black ground with one hot signal, two cold traces, and a disciplined gray ink ramp. The palette is small on purpose: the page should read as a dark instrument with red lights, not as a rainbow.
 
 ### Primary
-- **Signal Red** (`#ff2f23` dark / `#c0140a` light): The only accent. It marks primary actions, the live status dot, the selected navigation item, the radar core, and the red rule under text links. It is never a background wash or a decorative gradient.
-- **On Signal** (`#0a0908` dark / `#ffffff` light): Text and icons placed on Signal Red. The dark-mode value is near-black so red buttons read as a field marking rather than a warning light.
+- **Signal Red** (`signal-red`): the live channel. Primary buttons, the current page marker, the radar's leading edge, focus-adjacent accents, and one emphasized word in a display line. In light mode it darkens (`daylight-signal`) so it can sit on white without vibrating.
+- **Hot Signal** (`signal-hot`): hover and error states only. Never a resting fill.
+
+### Secondary
+- **Trace Cyan** (`trace-cyan`): the cool counterpoint. Radar rings, secondary button sheen, focus rings in dark mode, and the second glitch layer on the hero's hot word. Darkens to `daylight-cyan` in daylight.
+- **Noise Magenta** (`noise-magenta`): the rarest trace. One end of the animated panel border, one wash in the full-bleed work band. It should feel like a stray signal, not a brand color.
+
+### Tertiary
+- **Daylight Signal**, **Daylight Cyan**, **Daylight Magenta**: the light-mode remap of the three accents. They keep the same roles at print weight.
 
 ### Neutral
-- **Tactical Black** (`#080807`): Default page ground. It is warm-black, not blue-black.
-- **Panel Black** (`#12110e`) and **Sunken Black** (`#0b0a09`): Raised panels and the Rampage section ground. Depth comes from these tonal steps, not shadows.
-- **Warm White** (`#f2efe8`): Primary text on dark, and the inverted quote-card surface on About.
-- **Ash** (`#b7b2a8`) and **Faint Ash** (`#8d887e`): Secondary and metadata text on dark.
-- **Hairline Dark** (`#2b2822`) and **Hairline Dark Strong** (`#4f4a42`): Dividers, panel borders, and interactive outlines.
-- **Paper** (`#f2efe7`): Light-mode page ground.
-- **Panel Paper** (`#fbf8f0`) and **Sunken Paper** (`#e9e4d7`): Light-mode raised and sunken surfaces.
-- **Ink** (`#17140f`): Primary text on paper.
-- **Muted Ink** (`#5b554b`) and **Faint Ink** (`#6b655b`): Secondary and metadata text on paper.
-- **Hairline Paper** (`#d0c8b8`) and **Hairline Paper Strong** (`#8f8678`): Light-mode dividers and interactive outlines.
-- **Footer Black** (`#050504`): Footer and work-band ground in both modes.
+- **Void** (`void`): the ticker, footer, and full-bleed band ground. Deeper than the page so those bands read as hardware.
+- **Night** (`night`): the page ground.
+- **Panel / Raised Panel / Sunken** (`panel`, `panel-raised`, `sunken`): card faces, nested card faces, and inset wells such as inputs.
+- **Ink / Muted / Faint** (`ink`, `ink-muted`, `ink-faint`): body, supporting copy, and metadata. Faint is the floor for readable text; anything smaller or dimmer must be decorative and `aria-hidden`.
+- **Hairline** (`hairline`): the 1px structure color. It is allowed to be nearly invisible; structure comes from repetition, not weight.
+- **Daylight Ink / Muted / Faint**: the same three roles on the bright ground, retuned for contrast rather than inverted.
+- **Footer inks** (`footer-ink`, `footer-link`, `footer-muted`, `footer-faint`): the footer stays dark in both modes, so its inks are fixed rather than themed.
 
 ### Named Rules
+**The Red Is a Signal Rule.** Red marks one action per view and the live element in a view. If two primary buttons compete in one viewport, one becomes a ghost. Red is never a page background, a paragraph color, or a decorative fill.
 
-**The One Signal Rule.** Red appears only where something is live: a primary action, an active nav item, a status dot, a focused field, or a selected state. It should occupy less than a tenth of any screen. If red is everywhere, it stops being a signal.
-
-**The Paper Swap Rule.** Light mode is a full inversion of the reading surface, not a tint. Paper mode changes the page, ink, panels, hairlines, and red values together. It never leaves a navy, cyan, or purple residue, and it never turns the footer light.
+**The Daylight Is Not Paper Rule.** Light mode is a bright HUD, not a document. Keep the dark geometry, cut corners, and scanline logic; retune the accents for contrast. Never introduce warm paper, beige, or sepia to signal "light".
 
 ## Typography
 
-**Display Font:** Tourney (with Barlow Condensed and Impact fallbacks)
-**Body Font:** DM Sans (with system-ui fallback)
-**Subhead Font:** Barlow Condensed (with Impact fallback)
-**Label/Mono Font:** IBM Plex Mono (with monospace fallback)
+**Display Font:** Tourney (variable; fallback Barlow Condensed, Impact, sans-serif)
+**Body Font:** DM Sans (variable; fallback system-ui)
+**Subhead Font:** Barlow Condensed 600
+**Label/Mono Font:** IBM Plex Mono (400/500/600)
 
-**Character:** Tourney is the system's loudest voice: geometric, hollow, and built for two- or three-word declarations. Barlow Condensed gives subheads a clipped, printed-briefing cadence. DM Sans keeps long copy plain and readable. IBM Plex Mono is the field label: indices, statuses, buttons, and small metadata.
+**Character:** Tourney's squared, instrument-panel letterforms carry the world; DM Sans keeps long copy humane; IBM Plex Mono supplies the readout voice. The pairing is mechanical outside and calm inside, which is exactly the product's promise: loud interface, honest content.
 
 ### Hierarchy
-- **Display** (Tourney 700, `clamp(2.5rem, 6.6vw, 5.25rem)`, line-height `0.86`): Hero headlines and page titles. Uppercase, max 84px on desktop.
-- **Headline** (Tourney 700, `clamp(2.375rem, 5vw, 4.125rem)`, line-height `0.9`): Section headlines and large statements.
-- **Title** (Barlow Condensed 600, `1.5rem`, line-height `1.05`): Card titles, principle names, list-item headings, and subheads. Uppercase.
-- **Nav** (Barlow Condensed 600, `0.9375rem`, tracking `0.08em`): Header, mobile menu, and footer links. Uppercase.
-- **Body** (DM Sans 400, `1rem`, line-height `1.65`): Reading copy. Keep measure between 52ch and 64ch for long passages; sidebar paragraphs can run to 50ch.
-- **Label** (IBM Plex Mono 500–600, `0.6875rem`, tracking `0.08em`): Buttons, statuses, indices, eyebrow-free metadata, footer credits. Uppercase. Never use mono for a full sentence.
+- **Display** (700, `clamp(2.4rem, 7.2vw, 6rem)`, 0.86): the hero statement only. Uppercase, tracked to -0.025em, balanced across two authored lines.
+- **Page title** (700, `clamp(2.4rem, 5.6vw, 4.6rem)`, 0.9): `/mods`, `/about`, and other interior openers.
+- **Headline** (700, `clamp(36px, 5.2vw, 68px)`, 0.9): section headings that pair with a short paragraph in a two-column heading row.
+- **Band** (700, `clamp(40px, 6vw, 82px)`, 0.86): the full-bleed statement bands that interrupt the page.
+- **Title LG** (700, 30px): card and panel titles inside complex modules.
+- **Title** (600, 19–22px): subheads and list-item titles in Barlow Condensed.
+- **Body LG** (400, 17px, 1.68): hero and intro paragraphs, max 54ch.
+- **Body** (400, 16px, 1.65): default reading copy, 34–62ch depending on column.
+- **Body SM** (400, 14–15px, 1.6): card copy and supporting text.
+- **Label** (600, 11px, 0.16em, uppercase): buttons, nav utility, status lines, field labels, ticker items. This is the minimum size for functional text.
+- **Micro** (500, 10px, 0.2em): radar tags and the art stamp only. Decorative, never required to understand an action.
 
 ### Named Rules
+**The Two-Voice Rule.** Tourney speaks, DM Sans reads, IBM Plex Mono measures. A sentence is never set in all three, and body copy is never uppercase.
 
-**The Stencil Rule.** Tourney is display-only. Do not set it below 38px, and never use it for body copy, navigation, buttons, or form labels. Its hollow geometry needs size to stay legible.
+**The Trace Floor Rule.** Functional text never drops below 11px; 10px is reserved for decorative, `aria-hidden` instrumentation. If a label needs to be smaller to fit, the layout is wrong, not the size.
 
-**The Metadata Rule.** Mono type is for machine-shaped information: status, numbering, dates that actually exist, button text, and credits. It never carries a paragraph. Metadata never goes below 11px, even in the footer.
-
-**The Eleven-Pixel Floor.** Any visible text that carries meaning or can be clicked is at least 11px. Micro-labels earn their small size through tracking and case, not through illegibility.
+**The Line-Break Rule.** Display lines are authored, not auto-wrapped: use an explicit break or two block lines so the headline never orphans a word. Keep a real space in the accessible text across the break.
 
 ## Layout
 
-The container is `min(1180px, calc(100% - clamp(32px, 5vw, 64px)))`, centered. Pages share a section rhythm of `clamp(64px, 8vw, 108px)` vertical padding, with `.section-tight` used to remove the top half when two editorial sections meet.
+The page sits on a **1280px content plane** (`width: min(1280px, 100% - clamp(32px, 5vw, 72px))`) centered on the ground. Hero terrain, ticker, work band, and footer run full-bleed behind or outside that plane; everything readable stays inside it.
 
-The home hero is `min(760px, calc(100svh - 77px))` on desktop and auto-height below 900px, so the primary CTA stays visible at 1366×768 and 1280×720. Hero copy is capped at 660px; the radar is capped at 440px. Most editorial pages use a split heading: headline left, short deck right, stacking at 760px.
+The dominant composition is a **two-plane split**: copy on the left, an instrument on the right (hero copy + radar, principles text + contour plate, form + side panel). On narrow screens the split collapses to one column, instrument after copy. Section rhythm is `clamp(72px, 9vw, 128px)` of vertical padding, with headings separated from their body by `clamp(36px, 5vw, 64px)`.
 
-Recurring grids:
-- Hero: `1.08fr / 0.92fr`, stacked at 900px.
-- Principles: `1.06fr / 0.94fr`, stacked at 900px.
-- Rampage: `1.2fr / 0.8fr`, stacked at 900px.
-- About: `1.15fr / 0.85fr`, stacked at 900px.
-- Values: three equal columns, stacked at 760px.
-- Workboard rows: `76px / 1fr / auto`, with the status chip dropping below the description at 760px.
+**Matrices over gaps.** Groups of equal items (values, contributors, feature lists) are drawn as a single 1px-seam matrix: an outer hairline border, a hairline ground, and 1px gaps that reveal the ground. This is the system's alternative to floating cards. Nested cards are not allowed.
 
-The header is 76px of content on desktop and 68px on mobile (77px and 69px with the bottom hairline); every interactive target is at least 44px tall, and primary buttons are 48px. The mobile menu is a disclosure panel under the header, with 56px rows, a theme control, and a status line. Below 350px the brand descriptor hides so the header keeps its margins.
+Breakpoints are content-led: `1080px` shrinks the radar, `900px` collapses the hero and hides the desktop nav, `860px` stacks heading rows, `760px` collapses the remaining splits, `560px` stacks footer and CTA rows, `360px` is the last squeeze. Interactive targets stay at 44px or taller at every width.
 
-**The First Screen Rule.** At 1366×768 and 1280×720, the hero's primary CTA must remain visible without scrolling. A full-bleed hero is not a reason to hide the way in.
-
-**The Body Measure Rule.** Long-form copy stays between 52ch and 64ch, which lands under 80 rendered characters per line. Decks and sidebar paragraphs can be narrower; they should never run the full 1180px container.
+The ticker is a single horizontal marquee of verified status items; under reduced motion it wraps into a static list and the duplicate copy is removed. The hero HUD line is decorative and `aria-hidden`; it never carries information that exists nowhere else.
 
 ## Elevation & Depth
 
-The system is flat by default. Depth is carried by tonal panels, 1px hairlines, and the contrast between paper and ink, not by glows or stacked shadows. The quote card on About is a flat inverted surface. The Rampage card is the one lifted element: it carries a soft, offset shadow and a hairline border so it reads as a card placed on the section, not a floating app widget.
+Depth is **rim light plus bloom**, not ambient shadow. Panels are flat faces separated from the ground by a 1px signal-tinted rim, a soft offset shadow, and a wide colored bloom. The offset shadow does the physical work; the bloom is the world's light physics. On light mode the bloom collapses to a thin, low-opacity halo so the interface reads as a clean daylight display rather than a glowing toy.
+
+The hero canvas is the only true depth layer: a perspective grid recedes to a horizon, glow fields sit behind it, and a radar ping and sweep animate in screen space. Everything else is composited flat. Do not add parallax layers, blur stacks, or a second canvas to fake depth.
 
 ### Shadow Vocabulary
-- **Card lift** (`0 20px 50px rgba(0, 0, 0, 0.32)` dark / `0 20px 45px rgba(23, 20, 15, 0.1)` light): The Rampage card only. Always paired with a 1px border.
-- **Menu edge** (`0 24px 40px rgba(0, 0, 0, 0.18)`): The open mobile menu, to separate it from the page beneath.
+- **Rim + panel** (`--glow-panel`: 1px signal ring, `0 18px 50px rgb(0 0 0 / 0.55)`, 60px signal bloom): modules that must read as physical hardware.
+- **Signal bloom** (`--glow-signal`: 1px ring, 22px and 70px red bloom): the primary button at rest and current-page markers.
+- **Cyan trace** (`--glow-cyan`: 18px and 54px cyan bloom): secondary traces and hover on cool elements.
+- **Text glow** (`--text-glow`: 18px and 60px red bloom): one hot word in a display line. Never body copy.
+- **Card shadow** (`--card-shadow`: `0 24px 60px rgb(0 0 0 / 0.55)`): the offset layer under panels; pair with a rim.
 
-**The Flat-By-Default Rule.** Surfaces are flat at rest. If a new component needs depth, give it a tonal surface or a hairline first. A shadow must have an offset and a soft blur; a zero-offset colored halo is decoration and is not allowed.
+### Named Rules
+**The Rim Light Rule.** Depth is declared once: a 1px rim plus an offset shadow. Do not stack a hairline border under a wide shadow and call it two systems.
+
+**The Motion Budget Rule.** One canvas, one marquee, one sweep. If a new effect needs a render loop, it replaces one of these rather than joining them. CSS handles hover, reveal, and state transitions; the canvas is paused offscreen and under reduced motion.
 
 ## Shapes
 
-The form language is square, printed, and clipped. Cards, buttons, panels, and chips have 0 radius. Circles appear only where they carry meaning: radar rings, the signal dot, and the radar core. The brand mark is a square with a clipped bottom-right corner, like a field stamp. Rules are 1px; the only heavier line is the 2px red underline on the active navigation item and the red rule under text links.
+The form language is **cut, not curved**. Interactive controls and framed panels have their top-left and bottom-right corners cut at 12–14px via `clip-path`; cards and matrices are square. Circles are reserved for the radar, status dots, and rings. Borders are 1px and hairline; the only thicker line is a 2px animated gradient on a live panel edge.
 
-The radar is the signature geometry: concentric rings, two axes, a red core, and one slow sweeping sector. It is line art, not a glowing sci-fi prop. The About art panel uses the same contour language with offset oval lines.
+Contour geometry (nested ellipses, dashed rings, crosshair axes) stands in for imagery. The product has no build to screenshot, so the system draws instruments instead of inventing screenshots. No rounded-rectangle card grids, no pills, no glassmorphism, no soft "SaaS" blobs.
 
-**The No-Soft-Card Rule.** Panels stay square. A rounded card, pill button, or soft app surface is off-system.
+**The Cut Corner Rule.** Corners are cut at 12px for controls and 14px for panels. A rounded corner is a different world; do not mix the two in one view.
 
-**The One-Pixel Rule.** Borders, dividers, and panel edges are 1px. Do not reintroduce the old 3px side-tab or thick left-border callout.
-
-## Motion
-
-Motion is arrival and comprehension, never ambience. The page settles once, reveals sections as they enter the viewport, and gives small cues on interaction. Nothing loops in the reading surface except the radar.
-
-- **Entrance:** hero and page-intro copy rises 12px over `0.6s` on `cubic-bezier(0.16, 1, 0.3, 1)`, with `0.09s` and `0.18s` delays for the paragraph and actions.
-- **Reveal:** sections below the fold move 16px and fade over `0.62s` when they first intersect. Above-fold and already-passed sections are revealed before paint, including after client-side navigation. Content is only hidden while JavaScript is running (`html.has-js`); without JavaScript, or with reduced motion, everything is visible from the start. The hidden state uses opacity only, so assistive technology can still read the full page before sections are revealed.
-- **Theme change:** the theme toggle adds a temporary class for `0.32s`, crossfading background, border, text, fill, stroke, and shadow colors instead of hard-switching the page.
-- **Cues:** the active nav underline draws from the left over `0.22s`; text-link and footer rules draw the same way on hover and `:focus-visible`; internal arrows advance `3px`; external icons nudge up-right `2px`; the theme icon rotates and scales in over `0.34s`; the mobile menu drops `8px` over `0.22s`.
-- **Orientation:** a 2px signal line in the sticky header hairline tracks reading progress. It is hidden at the top of the page and has no transition, so it follows scroll directly.
-- **404:** a single 1px signal line scans the outlined `404` once over `0.9s`, then disappears.
-- **Radar:** the sector sweeps once every `6s`; the core stays still so the drawing never pretends to be live data.
-
-**The Reduced-Motion Rule.** Under `prefers-reduced-motion: reduce`, all animations and transitions collapse to `0.01ms`, smooth scrolling is disabled, and every reveal is forced visible. Motion is an enhancement, never a requirement for reading the page.
+**The No-Pill Rule.** Tags and status chips are square with a cut or hairline edge. A fully rounded pill is reserved for nothing.
 
 ## Components
 
 ### Buttons
-- **Shape:** square (0 radius), 48px minimum height, 20px horizontal padding.
-- **Primary:** Signal Red ground with On Signal text, mono 10.5px uppercase, 0.08em tracking. Hover shifts to Signal Red Hover. Active moves down 1px. Focus uses a 2px signal outline with a 3px offset.
-- **Secondary:** transparent ground, 1px Hairline Strong border, Warm White/Ink text. Hover fills with the local panel tone and strengthens the border.
-- **Text links:** mono 10px uppercase with a 1px red bottom rule; the arrow sits 8px from the label. Minimum target height is 44px.
+- **Shape:** cut-corner rectangle (12px cuts at top-left and bottom-right), 1px transparent border, 50px min height.
+- **Primary:** signal-red fill, void text, 11px mono uppercase at 0.16em, 0 24px padding, a 105° white sheen that travels across on hover.
+- **Hover / Focus:** hover lifts 1px, warms to hot signal, and adds a 16px red bloom; active presses 1px down. Focus-visible removes the clip-path and shows the global 2px ring with 3px offset.
+- **Secondary:** transparent face with a hairline border; on hover the border warms and a 8% red wash appears. It never competes with the primary for attention.
+- **Disabled:** 55% opacity, no bloom, no translation.
 
 ### Navigation
-- **Header:** sticky, 76px desktop / 68px mobile of content, plus a 1px bottom hairline. Brand mark, wordmark, and small "Project IGI community" line; the line hides below 350px.
-- **Desktop links:** Barlow Condensed 15px uppercase. Default Ash; hover/in-current Ink. The 2px Signal Red underline draws from the left on hover and stays drawn for the active page.
-- **Actions:** 44px square GitHub icon link and a 44px theme toggle. The theme toggle names the destination theme ("Light" while dark, "Dark" while light).
-- **Mobile:** below 900px the desktop links are replaced by a 44px Menu button. The menu is a focus-contained disclosure under the header with 56px rows, a GitHub row, the theme toggle, and a status line. Opening it locks background scroll, dims the page behind it, and makes that page inert; Tab stays inside the header and menu, Escape closes it, and focus returns to the Menu button. Outside taps and viewport changes also close it.
-- **Route changes:** client-side navigation moves focus to `#main` and announces the new page heading through a polite status region. The announcement is silent on first load.
+- **Style:** sticky 73px header on a translucent ground with a 1px bottom hairline and a signal-to-cyan light bar that runs along the seam. Brand mark is a cut-square glyph, 44px target.
+- **Desktop links:** 15px DM Sans in ink, 11px mono for utility links, an animated underline that grows from the left. Current page carries a red underline and a red dot.
+- **Mobile:** below 900px the desktop nav is replaced by a 44px menu button that opens a full-height scrim; menu items are 19px condensed display type with 44px rows.
 
-### Cards / Containers
-- **Rampage card:** Panel Black/Paper ground, 1px hairline, 34px padding, square corners, one soft offset shadow. Title, one-line description, a status line below the copy, and one GitHub link. No label above the title and no nested cards.
-- **Workboard status note:** Panel ground, 1px border, 16×18px padding, 7px red dot, 13.5px ash copy. It is a flat note, not an alert banner.
-- **Quote card:** flat inverted surface (Ink ground with Paper text on light; Warm White ground with Black text on dark). No border, no shadow, no quotation-mark decoration.
+### Inputs / Fields
+- **Style:** square, 48px min height, 1px hairline border, sunken ground, 14px mono text. Labels are 11px mono uppercase above the field.
+- **Focus:** border shifts to signal red with a 1px red ring and a 24px bloom; the native outline is suppressed only because the visible treatment is stronger.
+- **Error:** 11px mono in hot signal, reserved height so the form does not jump. Hints stay in faint mono at 11px.
 
-### Chips
-- **Status chip:** transparent ground, 1px Hairline Strong border, 6px signal dot, mono 9.5px uppercase. Used for "Direction · early", "Work in progress", and "Community principle".
-- **Section status:** no border. A 7px signal dot plus mono 9.5px uppercase text, used for "In development · no release date".
+### Cards / Panels
+- **Corner style:** square (0px) with a 1px signal-tinted hairline.
+- **Background:** panel or panel-raised, often with a radial signal wash in one corner and a 160° tonal gradient.
+- **Depth:** rim + offset shadow + bloom (`--glow-panel`). No border-left accent bars.
+- **Internal padding:** 32px 28px for standalone cards; 24–30px for list cells; 18–20px for status notes.
+- **Live edge:** the rampage card carries a 2px animated red→magenta gradient on its top edge. Use this once per page at most.
 
-### Status Strip
-The strip under the hero is static, not a marquee. Signal Red ground, On Signal text, mono 11px uppercase, one set of four community statuses, each with a small signal dot. "Accounts planned" links to the account status page and "Workboard open" links to `/mods`; the other two remain plain text. Items wrap as whole units with no dangling separators, and each item holds a 44px touch height. Focus rings switch to On Signal so they stay visible on the red ground.
+### Tags and Status
+- **Tag:** square, hairline border, void ground, 11px mono uppercase, 3px 7px padding.
+- **Status line:** 11px mono uppercase in faint, with a 7px red dot that carries a 3px ring and a 12px bloom. The dot pulses at 2.4s in normal motion and is static under reduced motion.
 
-### Account Status
-Login and registration are status pages, not forms. Each page leads with a plain-language headline, an intro, a three-item "What's true today" list, and two actions (Workboard, GitHub). A right-hand status rail repeats "Accounts are not open." There are no input styles in the system because there are no public forms until accounts exist.
+### Neon Stage (signature)
+The hero's full-bleed WebGL plane: a perspective floor grid, horizon glow fields, a radar ping and sweep, scanlines, grain, and a vignette, all in one fragment shader. It caps device pixel ratio at 1.5 and total pixels at ~2.4M, pauses when offscreen or hidden, and renders a single static frame under `prefers-reduced-motion`. Light mode swaps the uniform palette to the daylight HUD rather than adding a CSS overlay. The canvas is decorative (`aria-hidden`), never the only carrier of meaning.
 
-### Footer
-The footer is Footer Black in both modes. Brand mark, one-line community note, GitHub/Workboard/Account status links at 44px height, and a 10px mono bottom row with the community line and developer credits. It is the dark anchor under both modes.
+### Radar (signature)
+A circular instrument with bracket corners, three inset rings, crosshair axes, three blips at different radii, and three 10px labels. The sweep is a masked conic gradient; the blips pulse on offset delays. It tilts a few degrees toward the pointer via CSS custom properties set by the pointer handler. Under reduced motion the sweep and blips stop; the geometry remains.
+
+### Ticker
+A full-bleed, 1px-bordered marquee of verified status items (`No public build yet`, `Accounts open`, `Mods in progress`, `Keep the mission intact`). The track holds two identical groups for a seamless loop; the second is `aria-hidden` and removed from the tab order. Under reduced motion the duplicate is hidden and the track wraps into a static list.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep Signal Red for primary actions, active navigation, status dots, and the one live signal per surface.
-- **Do** use 1px hairlines, tonal panels, and generous section rhythm to create structure.
-- **Do** keep every interactive target at least 44px tall, and use a 2px visible focus outline.
-- **Do** keep all visible functional text at 11px or larger.
-- **Do** write status copy that says what is true today: no build, no accounts, no release date, no download.
-- **Do** keep body copy between 52ch and 64ch and display type at or below 84px.
-- **Do** keep the footer and work band dark in both modes.
-- **Do** use the inline line icons and the clipped brand mark rather than decorative iconography.
-- **Do** keep motion to arrival, reveal, and interaction cues; respect `prefers-reduced-motion`.
-- **Do** give keyboard focus the same rule draw, arrow cue, and container response that hover gets.
-- **Do** mark external links with the diagonal icon and an "opens in a new tab" cue.
+- **Do** keep red for one primary action and live signals; use ink, hairline, and faint for everything else.
+- **Do** author display line breaks and keep a real space in the accessible text across the break.
+- **Do** use the 1px-seam matrix for groups of equal items instead of separate floating cards.
+- **Do** pair every panel with a rim and an offset shadow; pair every strong animation with a static reduced-motion state.
+- **Do** keep functional text at 11px or larger, targets at 44px or larger, and the focus ring at 2px with 3px offset.
+- **Do** let the hero canvas be the only render loop; pause it offscreen and under reduced motion.
+- **Do** theme browser surfaces: red selection, red caret, signal scrollbar, styled placeholders.
 
 ### Don't:
-- **Don't** use gradient text, zero-offset glows, neon halos, or colored text shadows.
-- **Don't** put eyebrow or kicker labels above headings.
-- **Don't** use emoji as icons.
-- **Don't** use 3px left-border callouts or nested cards.
-- **Don't** invent system logs, error codes, fake terminal output, release dates, owners, or downloads.
-- **Don't** build forms or account CTAs for features that do not exist.
-- **Don't** link to `discord.com` or the Discord home page without a real invite URL.
-- **Don't** round cards, use pill buttons, or apply shadows as decoration.
-- **Don't** bring back the navy/cyan/purple skin or the animated gradient theme.
-- **Don't** turn the status strip into a repeating marquee.
-- **Don't** animate reading copy, add looping decorative motion beyond the radar, or hide content behind motion when JavaScript or motion is unavailable.
+- **Don't** use red as a page background, paragraph color, or decorative fill.
+- **Don't** warm light mode into paper, beige, or sepia; it is a daylight HUD, not a document.
+- **Don't** add a second canvas, parallax stack, or blur-heavy glass layer for depth.
+- **Don't** use gradient-filled text; emphasis comes from weight, size, and the single red word.
+- **Don't** round corners, build pill tags, or nest cards inside cards.
+- **Don't** put a color bar on the left edge of a card as an accent; use the rim and the seam.
+- **Don't** invent screenshots, fake terminal output, release dates, or stats to fill a composition; draw an instrument instead.
+- **Don't** set body copy in mono or uppercase; mono is a readout voice, not a costume.

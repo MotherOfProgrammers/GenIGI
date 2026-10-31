@@ -88,7 +88,7 @@ export function AuthForm({ mode, googleEnabled }: AuthFormProps) {
             <h1 className="display">{text.title}</h1>
             <p className="account-intro">{text.intro}</p>
 
-            <form className="auth-form" onSubmit={onSubmit} noValidate={false}>
+            <form className="auth-form" onSubmit={onSubmit}>
               {mode === "register" ? (
                 <div className="field">
                   <label htmlFor="auth-name">Name</label>

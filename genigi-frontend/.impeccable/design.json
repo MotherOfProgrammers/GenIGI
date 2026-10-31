@@ -1,144 +1,79 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-26T18:40:00Z",
+  "generatedAt": "2026-10-31T00:00:00Z",
   "title": "Design System: GenIGI",
   "extensions": {
     "colorMeta": {
       "signal-red": {
         "role": "primary",
         "displayName": "Signal Red",
-        "canonical": "#ff2f23",
-        "tonalRamp": ["#2b0805", "#5a100a", "#8a180f", "#b82016", "#e12a1d", "#ff2f23", "#ff6a60", "#ffb3ad"]
+        "canonical": "#ff2d2d",
+        "tonalRamp": ["#2a0304", "#4d0708", "#7a0d0f", "#a81517", "#d31f21", "#ff2d2d", "#ff6b6b", "#ffb3b3"]
       },
-      "signal-red-light": {
-        "role": "primary",
-        "displayName": "Signal Red Light",
-        "canonical": "#c0140a",
-        "tonalRamp": ["#2b0503", "#530a06", "#7d1009", "#a3120b", "#c0140a", "#d73a30", "#ea756d", "#f6b8b2"]
+      "trace-cyan": {
+        "role": "secondary",
+        "displayName": "Trace Cyan",
+        "canonical": "#22e8ff",
+        "tonalRamp": ["#00161c", "#002833", "#00404f", "#006273", "#0097ae", "#22e8ff", "#7ff2ff", "#c9fbff"]
       },
-      "tactical-black": {
+      "noise-magenta": {
+        "role": "tertiary",
+        "displayName": "Noise Magenta",
+        "canonical": "#ff2ba6",
+        "tonalRamp": ["#1f0014", "#3d0027", "#650040", "#93005a", "#c40077", "#ff2ba6", "#ff79c8", "#ffc2e5"]
+      },
+      "night": {
         "role": "neutral",
-        "displayName": "Tactical Black",
-        "canonical": "#080807",
-        "tonalRamp": ["#050504", "#080807", "#12110e", "#1b1915", "#2b2822", "#4f4a42", "#8d887e", "#f2efe8"]
-      },
-      "warm-white": {
-        "role": "neutral",
-        "displayName": "Warm White",
-        "canonical": "#f2efe8",
-        "tonalRamp": ["#8d887e", "#b7b2a8", "#d6d0c4", "#e8e3d8", "#f2efe8", "#f7f4ee", "#fbf9f4", "#ffffff"]
-      },
-      "paper": {
-        "role": "neutral",
-        "displayName": "Dossier Paper",
-        "canonical": "#f2efe7",
-        "tonalRamp": ["#6b655b", "#8f8678", "#b3aa99", "#d0c8b8", "#e9e4d7", "#f2efe7", "#f7f4ee", "#ffffff"]
+        "displayName": "Night Terminal",
+        "canonical": "#07080f",
+        "tonalRamp": ["#04050a", "#07080f", "#0a0c15", "#0e111c", "#161a2a", "#232840", "#3a4160", "#5a6280"]
       },
       "ink": {
         "role": "neutral",
-        "displayName": "Dossier Ink",
-        "canonical": "#17140f",
-        "tonalRamp": ["#17140f", "#2b2620", "#4f4a41", "#6b655b", "#8f8678", "#b3aa99", "#d0c8b8", "#f2efe7"]
+        "displayName": "Readout Ink",
+        "canonical": "#f2f5fb",
+        "tonalRamp": ["#1a1e29", "#333a4c", "#4f5870", "#727d95", "#8f9ab2", "#a4aec4", "#cdd4e2", "#f2f5fb"]
       },
-      "footer-black": {
+      "daylight-ground": {
         "role": "neutral",
-        "displayName": "Footer Black",
-        "canonical": "#050504",
-        "tonalRamp": ["#050504", "#0a0908", "#14120e", "#1e1b15", "#332f28", "#5d564b", "#9a9488", "#f2efe8"]
+        "displayName": "Daylight Ground",
+        "canonical": "#f1f4fa",
+        "tonalRamp": ["#05070d", "#45516a", "#657089", "#9aa4bb", "#c7cfdf", "#e5eaf3", "#f1f4fa", "#ffffff"]
       }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "Hero headlines and page titles only; never below 38px."
-      },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "Section headlines and large editorial statements."
-      },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Card and list-item subheads in clipped Barlow Condensed."
-      },
-      "nav": {
-        "displayName": "Navigation",
-        "purpose": "Header, mobile menu, and footer navigation."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Long-form reading copy at a 62–66ch measure."
-      },
-      "label": {
-        "displayName": "Field Label",
-        "purpose": "Statuses, indices, buttons, and short metadata."
-      }
+      "display": { "displayName": "Display", "purpose": "Hero statement only; uppercase Tourney, two authored lines." },
+      "page-title": { "displayName": "Page Title", "purpose": "Interior page openers on /mods, /about, /auth, 404." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings paired with a short paragraph." },
+      "band": { "displayName": "Band", "purpose": "Full-bleed statement bands that interrupt the page." },
+      "title-lg": { "displayName": "Title LG", "purpose": "Card and panel titles inside complex modules." },
+      "title": { "displayName": "Title", "purpose": "Subheads and list-item titles in Barlow Condensed." },
+      "body-lg": { "displayName": "Body LG", "purpose": "Hero and intro paragraphs." },
+      "body": { "displayName": "Body", "purpose": "Default reading copy." },
+      "body-sm": { "displayName": "Body SM", "purpose": "Card copy and supporting text." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav utility, status, field labels, ticker. Functional minimum." },
+      "micro": { "displayName": "Micro", "purpose": "Decorative instrumentation only: radar tags and art stamps." }
     },
     "shadows": [
-      {
-        "name": "card-lift-dark",
-        "value": "0 20px 50px rgba(0, 0, 0, 0.32)",
-        "purpose": "The Rampage card in dark mode."
-      },
-      {
-        "name": "card-lift-light",
-        "value": "0 20px 45px rgba(23, 20, 15, 0.1)",
-        "purpose": "The Rampage card in paper mode."
-      },
-      {
-        "name": "menu-edge",
-        "value": "0 24px 40px rgba(0, 0, 0, 0.18)",
-        "purpose": "Open mobile menu separation."
-      }
+      { "name": "rim-panel", "value": "0 0 0 1px rgb(255 45 45 / 0.22), 0 18px 50px rgb(0 0 0 / 0.55), 0 0 60px rgb(255 45 45 / 0.08)", "purpose": "Hardware-like panels with a rim, an offset shadow, and a bloom." },
+      { "name": "signal-bloom", "value": "0 0 0 1px rgb(255 45 45 / 0.35), 0 0 22px rgb(255 45 45 / 0.30), 0 0 70px rgb(255 45 45 / 0.14)", "purpose": "Primary button at rest and current-page markers." },
+      { "name": "cyan-trace", "value": "0 0 18px rgb(34 232 255 / 0.35), 0 0 54px rgb(34 232 255 / 0.15)", "purpose": "Cool secondary traces and hover." },
+      { "name": "text-glow", "value": "0 0 18px rgb(255 45 45 / 0.45), 0 0 60px rgb(255 45 45 / 0.25)", "purpose": "One hot word in a display line." },
+      { "name": "card-shadow", "value": "0 24px 60px rgb(0 0 0 / 0.55)", "purpose": "The offset layer under panels; always paired with a rim." }
     ],
     "motion": [
-      {
-        "name": "hero-rise",
-        "value": "0.6s cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "The authored entrance for hero and page-intro copy."
-      },
-      {
-        "name": "scroll-reveal",
-        "value": "0.62s cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Sections fade and rise once as they enter the viewport. Gated by html.has-js; visible without JavaScript."
-      },
-      {
-        "name": "theme-crossfade",
-        "value": "0.32s ease",
-        "purpose": "Temporary color transition when switching between dark and light modes."
-      },
-      {
-        "name": "state-transition",
-        "value": "0.16s–0.22s ease",
-        "purpose": "Hover and focus cues: nav underline and link-rule draws, internal arrow advance, external icon nudge, menu drop, container focus response, and theme-control state changes."
-      },
-      {
-        "name": "scroll-progress",
-        "value": "direct scroll mapping, no transition",
-        "purpose": "A 2px signal line in the sticky header hairline shows reading position on long pages. Hidden at the top."
-      },
-      {
-        "name": "not-found-scan",
-        "value": "0.9s cubic-bezier(0.16, 1, 0.3, 1), once, 0.3s delay",
-        "purpose": "A single signal line crosses the outlined 404, then disappears. Disabled under reduced motion."
-      },
-      {
-        "name": "radar-loop",
-        "value": "6s linear sweep",
-        "purpose": "The only looping motion, confined to the decorative radar sweep. The core stays static so it never reads as live data."
-      },
-      {
-        "name": "reduced-motion",
-        "value": "0.01ms, reveals forced visible",
-        "purpose": "All motion collapses under prefers-reduced-motion: reduce."
-      }
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default state transition and reveal easing." },
+      { "name": "ease-snap", "value": "cubic-bezier(0.19, 1, 0.22, 1)", "purpose": "Faster attack for menu and pointer responses." },
+      { "name": "marquee", "value": "46s linear infinite", "purpose": "Ticker track; disabled and wrapped under reduced motion." },
+      { "name": "radar-sweep", "value": "6s linear infinite", "purpose": "Hero radar sweep; static under reduced motion." }
     ],
     "breakpoints": [
-      { "name": "nav", "value": "900px" },
-      { "name": "stack", "value": "760px" },
-      { "name": "compact", "value": "640px" },
-      { "name": "status", "value": "560px" },
-      { "name": "small", "value": "520px" },
-      { "name": "tiny", "value": "350px" }
+      { "name": "desktop-narrow", "value": "1080px" },
+      { "name": "hero-collapse", "value": "900px" },
+      { "name": "heading-stack", "value": "860px" },
+      { "name": "split-collapse", "value": "760px" },
+      { "name": "mobile", "value": "560px" },
+      { "name": "minimum", "value": "360px" }
     ]
   },
   "components": [
@@ -146,146 +81,105 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The single live action on a surface; square red field marking.",
-      "html": "<button class=\"ds-btn-primary\">Explore the work <svg width=\"15\" height=\"15\" viewBox=\"0 0 20 20\" fill=\"none\" aria-hidden=\"true\"><path d=\"M3 10h13M10 4l6 6-6 6\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"square\"></path></svg></button>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 20px; border: 1px solid var(--signal, #ff2f23); border-radius: 0; background: var(--signal, #ff2f23); color: var(--on-signal, #0a0908); font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease; } .ds-btn-primary:hover { background: var(--signal-hover, #ff5a4e); border-color: var(--signal-hover, #ff5a4e); } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus, #ff5a4e); outline-offset: 3px; }"
+      "description": "Signal-red action with cut corners and a travelling sheen; one per view.",
+      "html": "<button class=\"ds-btn-primary\">Explore the work <svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></button>",
+      "css": ".ds-btn-primary { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 24px; border: 1px solid transparent; background: var(--signal, #ff2d2d); color: var(--on-signal, #0a0206); font-family: var(--font-mono, \"IBM Plex Mono\", monospace); font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); overflow: hidden; cursor: pointer; transition: background-color 0.2s ease, translate 0.2s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)), filter 0.24s ease; } .ds-btn-primary::before { content: \"\"; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 20%, rgb(255 255 255 / 0.55) 50%, transparent 80%); translate: -130% 0; transition: translate 0.55s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)); pointer-events: none; } .ds-btn-primary:hover { background: var(--signal-hot, #ff7066); translate: 0 -1px; filter: drop-shadow(0 0 16px rgb(var(--signal-rgb, 255 45 45) / 0.55)); } .ds-btn-primary:hover::before { translate: 130% 0; } .ds-btn-primary:active { translate: 0 1px; } .ds-btn-primary:focus-visible { outline: 2px solid var(--focus, #7ef6ff); outline-offset: 3px; clip-path: none; } .ds-btn-primary:disabled { opacity: 0.55; filter: none; translate: none; cursor: not-allowed; }"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Quiet counterpart to the primary action; hairline border with a panel-fill hover.",
+      "description": "Hairline companion action that never competes with the primary.",
       "html": "<button class=\"ds-btn-secondary\">Meet the community</button>",
-      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; border: 1px solid var(--line-strong, #4f4a42); border-radius: 0; background: transparent; color: var(--ink, #f2efe8); font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background-color 0.18s ease, border-color 0.18s ease; } .ds-btn-secondary:hover { background: var(--panel, #12110e); border-color: var(--ink, #f2efe8); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--focus, #ff5a4e); outline-offset: 3px; }"
+      "css": ".ds-btn-secondary { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 24px; border: 1px solid var(--line-strong, rgba(160, 190, 255, 0.3)); background: rgb(255 255 255 / 0.02); color: var(--ink, #f2f5fb); font-family: var(--font-mono, \"IBM Plex Mono\", monospace); font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px); overflow: hidden; cursor: pointer; transition: border-color 0.2s ease, background-color 0.2s ease, translate 0.2s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-btn-secondary:hover { border-color: var(--line-signal, rgba(255, 45, 45, 0.45)); background: rgb(var(--signal-rgb, 255 45 45) / 0.08); translate: 0 -1px; } .ds-btn-secondary:focus-visible { outline: 2px solid var(--focus, #7ef6ff); outline-offset: 3px; clip-path: none; }"
     },
     {
-      "name": "Desktop Navigation",
+      "name": "Text Link",
+      "kind": "custom",
+      "description": "Mono 11px action with a red underline that grows from a quarter width.",
+      "html": "<a class=\"ds-link\" href=\"#\">Explore directions <svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-link { position: relative; display: inline-flex; align-items: center; gap: 9px; min-height: 44px; padding-bottom: 2px; color: var(--ink, #f2f5fb); font-family: var(--font-mono, \"IBM Plex Mono\", monospace); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; } .ds-link::after { content: \"\"; position: absolute; right: 0; bottom: 8px; left: 0; height: 1px; background: var(--signal, #ff2d2d); box-shadow: 0 0 8px rgb(var(--signal-rgb, 255 45 45) / 0.7); transform: scaleX(0.22); transform-origin: left; transition: transform 0.26s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-link:hover::after, .ds-link:focus-visible::after { transform: scaleX(1); } .ds-link svg { transition: translate 0.2s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-link:hover svg { translate: 3px 0; } .ds-link:focus-visible { outline: 2px solid var(--focus, #7ef6ff); outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation Link",
       "kind": "nav",
-      "refersTo": "nav-link",
-      "description": "Clipped Barlow Condensed links with a 2px signal underline for the current page.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Example navigation\"><a class=\"ds-nav-link\" href=\"#\" aria-current=\"page\">Home</a><a class=\"ds-nav-link\" href=\"#\">Workboard</a><a class=\"ds-nav-link\" href=\"#\">About</a><a class=\"ds-nav-link\" href=\"#\">Accounts</a></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; gap: 26px; } .ds-nav-link { position: relative; display: inline-flex; align-items: center; min-height: 44px; color: var(--muted, #b7b2a8); font-family: 'Barlow Condensed', Impact, sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; } .ds-nav-link:hover, .ds-nav-link[aria-current='page'] { color: var(--ink, #f2efe8); } .ds-nav-link[aria-current='page']::after { content: ''; position: absolute; right: 0; bottom: 7px; left: 0; height: 2px; background: var(--signal, #ff2f23); } .ds-nav-link:focus-visible { outline: 2px solid var(--focus, #ff5a4e); outline-offset: 3px; }"
+      "description": "Condensed 15px link with a signal-to-magenta underline on hover and current page.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Home</a><a href=\"#\">Mods</a><a href=\"#\">About</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 4px; } .ds-nav a { position: relative; display: inline-flex; align-items: center; height: 44px; padding: 0 12px; color: var(--ink-muted, #a4aec4); font-family: var(--font-subhead, \"Barlow Condensed\", sans-serif); font-size: 15px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: color 0.2s ease; } .ds-nav a::after { content: \"\"; position: absolute; right: 12px; bottom: 7px; left: 12px; height: 2px; background: linear-gradient(90deg, var(--signal, #ff2d2d), var(--magenta, #ff2ba6)); box-shadow: 0 0 10px rgb(var(--signal-rgb, 255 45 45) / 0.8); transform: scaleX(0); transform-origin: left; transition: transform 0.24s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)); } .ds-nav a:hover, .ds-nav a[aria-current=\"page\"] { color: var(--ink, #f2f5fb); } .ds-nav a:hover::after, .ds-nav a[aria-current=\"page\"]::after { transform: scaleX(1); } .ds-nav a:focus-visible { outline: 2px solid var(--focus, #7ef6ff); outline-offset: 3px; }"
     },
     {
-      "name": "Status Chip",
-      "kind": "chip",
-      "refersTo": "status-chip",
-      "description": "Square hairline chip with a red status dot for workboard states.",
-      "html": "<span class=\"ds-chip\"><span class=\"ds-chip-dot\" aria-hidden=\"true\"></span>Direction · early</span>",
-      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 8px; min-height: 30px; padding: 6px 9px; border: 1px solid var(--line-strong, #4f4a42); border-radius: 0; background: transparent; color: var(--muted, #b7b2a8); font-family: 'IBM Plex Mono', monospace; font-size: 11px; line-height: 1.5; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; } .ds-chip-dot { width: 6px; height: 6px; border-radius: 9999px; background: var(--signal, #ff2f23); }"
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Square sunken well with a mono label and a red focus bloom.",
+      "html": "<label class=\"ds-field\"><span>Email</span><input type=\"email\" placeholder=\"pilot@example.com\" /></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 7px; } .ds-field span { color: var(--faint, #727d95); font-family: var(--font-mono, \"IBM Plex Mono\", monospace); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; } .ds-field input { min-height: 48px; padding: 0 14px; border: 1px solid var(--line-strong, rgba(160, 190, 255, 0.3)); border-radius: 0; background: var(--sunken, #04050b); color: var(--ink, #f2f5fb); font-family: var(--font-mono, \"IBM Plex Mono\", monospace); font-size: 14px; letter-spacing: 0.02em; transition: border-color 0.2s ease, box-shadow 0.2s ease; } .ds-field input::placeholder { color: var(--ink-muted, #a4aec4); opacity: 1; } .ds-field input:hover { border-color: rgb(var(--signal-rgb, 255 45 45) / 0.4); } .ds-field input:focus { outline: none; border-color: var(--signal, #ff2d2d); box-shadow: 0 0 0 1px rgb(var(--signal-rgb, 255 45 45) / 0.5), 0 0 24px rgb(var(--signal-rgb, 255 45 45) / 0.18); } .ds-field input:focus-visible { outline: 2px solid var(--focus, #7ef6ff); outline-offset: 3px; }"
     },
     {
-      "name": "Panel Card",
+      "name": "Live Panel",
       "kind": "card",
-      "refersTo": "panel-card",
-      "description": "The Rampage card: tonal panel, hairline, square corners, one soft offset shadow.",
-      "html": "<article class=\"ds-card\"><h3 class=\"ds-card-title\">IGI Rampage</h3><p class=\"ds-card-copy\">Early work, shared openly. Nothing to download yet.</p><p class=\"ds-card-meta\"><span class=\"ds-card-dot\" aria-hidden=\"true\"></span>In development · no release date</p></article>",
-      "css": ".ds-card { width: 100%; max-width: 380px; padding: 34px; border: 1px solid var(--line, #2b2822); border-radius: 0; background: var(--panel, #12110e); color: var(--ink, #f2efe8); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.32); } .ds-card-title { margin: 0 0 8px; color: var(--ink, #f2efe8); font-family: 'Barlow Condensed', Impact, sans-serif; font-size: 36px; font-weight: 600; line-height: 1.05; letter-spacing: 0.015em; text-transform: uppercase; } .ds-card-copy { margin: 0; color: var(--muted, #b7b2a8); font-family: 'DM Sans', system-ui, sans-serif; font-size: 14px; line-height: 1.6; } .ds-card-meta { display: flex; align-items: center; gap: 8px; margin: 18px 0 0; color: var(--faint, #8d887e); font-family: 'IBM Plex Mono', monospace; font-size: 11px; line-height: 1.5; letter-spacing: 0.07em; text-transform: uppercase; } .ds-card-dot { width: 7px; height: 7px; border-radius: 9999px; background: var(--signal, #ff2f23); }"
+      "refersTo": "panel",
+      "description": "Square hardware panel with a rim, a bloom, and one animated signal edge.",
+      "html": "<article class=\"ds-panel\"><h3>IGI Rampage</h3><p>Early work, shared openly. Nothing to download yet.</p><p class=\"ds-panel-meta\"><span class=\"ds-dot\"></span> In development · no release date</p></article>",
+      "css": ".ds-panel { position: relative; padding: 32px 28px; border: 1px solid var(--line-signal, rgba(255, 45, 45, 0.45)); background: radial-gradient(100% 80% at 100% 0%, rgb(var(--signal-rgb, 255 45 45) / 0.16), transparent 60%), linear-gradient(165deg, var(--panel-raised, #0e111c), var(--panel, #0a0c15)); box-shadow: var(--glow-panel, 0 0 0 1px rgba(255, 45, 45, 0.22), 0 18px 50px rgba(0, 0, 0, 0.55)); color: var(--ink, #f2f5fb); font-family: var(--font-body, \"DM Sans\", system-ui, sans-serif); overflow: hidden; } .ds-panel::before { content: \"\"; position: absolute; inset: -1px -1px auto; height: 2px; background: linear-gradient(90deg, transparent, var(--signal, #ff2d2d), var(--magenta, #ff2ba6), transparent); background-size: 200% 100%; animation: ds-border-run 5s linear infinite; } .ds-panel h3 { margin: 0 0 10px; font-family: var(--font-display, \"Tourney\", sans-serif); font-size: 30px; font-weight: 700; line-height: 1.02; letter-spacing: 0.01em; text-transform: uppercase; } .ds-panel p { max-width: 34ch; margin: 0; color: var(--ink-muted, #a4aec4); font-size: 14px; line-height: 1.6; } .ds-panel-meta { display: flex; align-items: center; gap: 9px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--hairline, rgba(150, 175, 255, 0.14)); color: var(--ink-faint, #727d95); font-family: var(--font-mono, \"IBM Plex Mono\", monospace); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; } @keyframes ds-border-run { from { background-position: 200% 0; } to { background-position: 0 0; } }"
     },
     {
-      "name": "Status Strip",
+      "name": "Status Dot",
       "kind": "custom",
-      "description": "The static community-status band under the hero; never a marquee.",
-      "html": "<div class=\"ds-status-strip\"><span>No public build yet</span><span>Accounts planned</span><span>Workboard open</span></div>",
-      "css": ".ds-status-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 24px; padding: 11px 32px; border-bottom: 1px solid var(--line, #2b2822); background: var(--signal, #ff2f23); color: var(--on-signal, #0a0908); font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; } .ds-status-strip span { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; } .ds-status-strip span::before { content: ''; width: 5px; height: 5px; background: currentColor; opacity: 0.62; }"
+      "description": "Seven-pixel red lamp with a ring, a bloom, and a 2.4s pulse.",
+      "html": "<span class=\"ds-dot\"></span>",
+      "css": ".ds-dot { display: inline-block; width: 7px; height: 7px; flex: 0 0 auto; border-radius: 50%; background: var(--signal, #ff2d2d); box-shadow: 0 0 0 3px rgb(var(--signal-rgb, 255 45 45) / 0.16), 0 0 12px rgb(var(--signal-rgb, 255 45 45) / 0.9); animation: ds-dot-pulse 2.4s ease-in-out infinite; } @keyframes ds-dot-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } } @media (prefers-reduced-motion: reduce) { .ds-dot { animation: none; } }"
     },
     {
-      "name": "Status Note",
-      "kind": "custom",
-      "description": "Flat workboard honesty note with one status dot and no side-tab.",
-      "html": "<div class=\"ds-note\"><span class=\"ds-note-dot\" aria-hidden=\"true\"></span><p>Nothing listed here is currently presented as released or downloadable.</p></div>",
-      "css": ".ds-note { display: flex; align-items: flex-start; gap: 12px; padding: 16px 18px; border: 1px solid var(--line, #2b2822); border-radius: 0; background: var(--panel, #12110e); } .ds-note-dot { flex: none; width: 7px; height: 7px; margin-top: 7px; border-radius: 9999px; background: var(--signal, #ff2f23); } .ds-note p { margin: 0; color: var(--muted, #b7b2a8); font-family: 'DM Sans', system-ui, sans-serif; font-size: 13.5px; line-height: 1.65; }"
+      "name": "Status Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Square hairline chip for stage labels such as Exploring.",
+      "html": "<span class=\"ds-tag\">Exploring</span>",
+      "css": ".ds-tag { display: inline-flex; align-items: center; padding: 3px 8px; border: 1px solid var(--line-strong, rgba(160, 190, 255, 0.3)); background: var(--void, #04050a); color: var(--ink-muted, #a4aec4); font-family: var(--font-mono, \"IBM Plex Mono\", monospace); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; line-height: 1.5; text-transform: uppercase; border-radius: 0; white-space: nowrap; }"
     }
   ],
   "narrative": {
-    "northStar": "The Field Dossier",
-    "overview": "GenIGI looks like a briefing left on the table after a long operation: black terminal surfaces, warm paper, hard rules, and type that behaves like stencilled signage. The interface never pretends to be a game HUD or a sci-fi dashboard. It is an editorial community archive for people who care about Project IGI, with the patience to say what is real and what is still being worked out. The two modes are one system, not two skins. Dark is the default field-terminal reading of the dossier; light is the same pages printed on warm paper. Both share one layout, one grid, one type hierarchy, one red signal, and the same flat, hairline-driven surfaces. Footer and work-band surfaces stay dark in both modes so the page always has an anchor. The voice is specific and unsentimental: short headings, plain status copy, no invented release dates, no fake terminal output. The design supports that honesty by keeping decoration to a minimum. One radar drawing, one clipped brand mark, one red signal.",
+    "northStar": "COLD SIGNAL",
+    "overview": "The site behaves like a field terminal left running in a dark room: a perspective grid on the floor, a radar sweeping the corner, one red channel marker, and a thin HUD frame that never quite stops being an instrument. It is not game-marketing chrome and not retro-CRT nostalgia. It is a working console for a community that is honest about being early, so the interface looks live without pretending anything is finished.\n\nThe world is built from three planes. Terrain is the full-bleed hero canvas: grid, horizon glow, radar ping, scanline. Instrument is the panel language: hairline frames, cut corners, status dots, mono labels, a marquee of verified facts. Dossier is the readable layer: condensed uppercase display type and a calm sans body, on a surface dark enough that the red reads as light rather than paint.\n\nLight mode is not paper. It is the same instrument under daylight: the ground goes cool white, the ink goes near-black, the accents darken to print weight, and the bloom collapses to a clean rim. Geometry, spacing, and hierarchy are identical in both modes; only the light physics changes.",
     "keyCharacteristics": [
-      "Two honest modes: tactical black by default, warm paper dossiers on request.",
-      "Tourney display type, set only at sign-scale.",
-      "Barlow Condensed for subheads and navigation; DM Sans for reading; IBM Plex Mono for metadata.",
-      "Flat surfaces, 1px hairlines, square corners.",
-      "Signal red reserved for action, status, and wayfinding.",
-      "Status-first content: no dead forms, no fake downloads, no invented dates.",
-      "A restrained motion layer: one hero rise, gated scroll reveals, and small directional cues."
+      "Night-terminal default with a fully remapped daylight HUD.",
+      "Signal red is an event, not a surface.",
+      "Cyan and magenta appear only as traces: sweeps, rings, secondary glows.",
+      "Cut corners and 1px seams instead of rounded cards and gaps.",
+      "One WebGL canvas carries the hero; CSS carries everything else.",
+      "Mono type is reserved for measurement, status, and controls.",
+      "Every strong effect has a static counterpart under prefers-reduced-motion."
     ],
     "rules": [
-      {
-        "name": "The One Signal Rule",
-        "body": "Red appears only where something is live: a primary action, an active nav item, a status dot, a focused field, or a selected state. It should occupy less than a tenth of any screen. If red is everywhere, it stops being a signal.",
-        "section": "colors"
-      },
-      {
-        "name": "The Paper Swap Rule",
-        "body": "Light mode is a full inversion of the reading surface, not a tint. Paper mode changes the page, ink, panels, hairlines, and red values together. It never leaves a navy, cyan, or purple residue, and it never turns the footer light.",
-        "section": "colors"
-      },
-      {
-        "name": "The Stencil Rule",
-        "body": "Tourney is display-only. Do not set it below 38px, and never use it for body copy, navigation, buttons, or form labels. Its hollow geometry needs size to stay legible.",
-        "section": "typography"
-      },
-      {
-        "name": "The Metadata Rule",
-        "body": "Mono type is for machine-shaped information: status, numbering, dates that actually exist, button text, and credits. It never carries a paragraph.",
-        "section": "typography"
-      },
-      {
-        "name": "The First Screen Rule",
-        "body": "At 1366×768 and 1280×720, the hero's primary CTA must remain visible without scrolling. A full-bleed hero is not a reason to hide the way in.",
-        "section": "layout"
-      },
-      {
-        "name": "The Body Measure Rule",
-        "body": "Long-form copy stays between 52ch and 64ch, which lands under 80 rendered characters per line. Decks and sidebar paragraphs can be narrower; they should never run the full 1180px container.",
-        "section": "layout"
-      },
-      {
-        "name": "The Flat-By-Default Rule",
-        "body": "Surfaces are flat at rest. If a new component needs depth, give it a tonal surface or a hairline first. A shadow must have an offset and a soft blur; a zero-offset colored halo is decoration and is not allowed.",
-        "section": "elevation"
-      },
-      {
-        "name": "The No-Soft-Card Rule",
-        "body": "Panels stay square. A rounded card, pill button, or soft app surface is off-system.",
-        "section": "shapes"
-      },
-      {
-        "name": "The One-Pixel Rule",
-        "body": "Borders, dividers, and panel edges are 1px. Do not reintroduce the old 3px side-tab or thick left-border callout.",
-        "section": "shapes"
-      },
-      {
-        "name": "The Reduced-Motion Rule",
-        "body": "Under prefers-reduced-motion: reduce, all animations and transitions collapse to 0.01ms, smooth scrolling is disabled, and every reveal is forced visible. Motion is an enhancement, never a requirement for reading the page.",
-        "section": "motion"
-      }
+      { "name": "The Red Is a Signal Rule", "body": "Red marks one action per view and the live element in a view. If two primary buttons compete in one viewport, one becomes a ghost. Red is never a page background, a paragraph color, or a decorative fill.", "section": "colors" },
+      { "name": "The Daylight Is Not Paper Rule", "body": "Light mode is a bright HUD, not a document. Keep the dark geometry, cut corners, and scanline logic; retune the accents for contrast. Never introduce warm paper, beige, or sepia to signal \"light\".", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Tourney speaks, DM Sans reads, IBM Plex Mono measures. A sentence is never set in all three, and body copy is never uppercase.", "section": "typography" },
+      { "name": "The Trace Floor Rule", "body": "Functional text never drops below 11px; 10px is reserved for decorative, aria-hidden instrumentation. If a label needs to be smaller to fit, the layout is wrong, not the size.", "section": "typography" },
+      { "name": "The Line-Break Rule", "body": "Display lines are authored, not auto-wrapped: use an explicit break or two block lines so the headline never orphans a word. Keep a real space in the accessible text across the break.", "section": "typography" },
+      { "name": "The Rim Light Rule", "body": "Depth is declared once: a 1px rim plus an offset shadow. Do not stack a hairline border under a wide shadow and call it two systems.", "section": "elevation" },
+      { "name": "The Motion Budget Rule", "body": "One canvas, one marquee, one sweep. If a new effect needs a render loop, it replaces one of these rather than joining them. CSS handles hover, reveal, and state transitions; the canvas is paused offscreen and under reduced motion.", "section": "elevation" },
+      { "name": "The Cut Corner Rule", "body": "Corners are cut at 12px for controls and 14px for panels. A rounded corner is a different world; do not mix the two in one view.", "section": "shapes" },
+      { "name": "The No-Pill Rule", "body": "Tags and status chips are square with a cut or hairline edge. A fully rounded pill is reserved for nothing.", "section": "shapes" }
     ],
     "dos": [
-      "Do keep Signal Red for primary actions, active navigation, status dots, and the one live signal per surface.",
-      "Do use 1px hairlines, tonal panels, and generous section rhythm to create structure.",
-      "Do keep every interactive target at least 44px tall, and use a 2px visible focus outline.",
-      "Do keep all visible functional text at 11px or larger.",
-      "Do write status copy that says what is true today: no build, no accounts, no release date, no download.",
-      "Do keep body copy between 52ch and 64ch and display type at or below 84px.",
-      "Do keep the footer and work band dark in both modes.",
-      "Do use the inline line icons and the clipped brand mark rather than decorative iconography.",
-      "Do keep motion to arrival, reveal, and interaction cues; respect prefers-reduced-motion.",
-      "Do give keyboard focus the same rule draw, arrow cue, and container response that hover gets.",
-      "Do mark external links with the diagonal icon and an opens-in-a-new-tab cue."
+      "Do keep red for one primary action and live signals; use ink, hairline, and faint for everything else.",
+      "Do author display line breaks and keep a real space in the accessible text across the break.",
+      "Do use the 1px-seam matrix for groups of equal items instead of separate floating cards.",
+      "Do pair every panel with a rim and an offset shadow; pair every strong animation with a static reduced-motion state.",
+      "Do keep functional text at 11px or larger, targets at 44px or larger, and the focus ring at 2px with 3px offset.",
+      "Do let the hero canvas be the only render loop; pause it offscreen and under reduced motion.",
+      "Do theme browser surfaces: red selection, red caret, signal scrollbar, styled placeholders."
     ],
     "donts": [
-      "Don't use gradient text, zero-offset glows, neon halos, or colored text shadows.",
-      "Don't put eyebrow or kicker labels above headings.",
-      "Don't use emoji as icons.",
-      "Don't use 3px left-border callouts or nested cards.",
-      "Don't invent system logs, error codes, fake terminal output, release dates, owners, or downloads.",
-      "Don't build forms or account CTAs for features that do not exist.",
-      "Don't link to discord.com or the Discord home page without a real invite URL.",
-      "Don't round cards, use pill buttons, or apply shadows as decoration.",
-      "Don't bring back the navy/cyan/purple skin or the animated gradient theme.",
-      "Don't turn the status strip into a repeating marquee.",
-      "Don't animate reading copy, add looping decorative motion beyond the radar, or hide content behind motion when JavaScript or motion is unavailable."
+      "Don't use red as a page background, paragraph color, or decorative fill.",
+      "Don't warm light mode into paper, beige, or sepia; it is a daylight HUD, not a document.",
+      "Don't add a second canvas, parallax stack, or blur-heavy glass layer for depth.",
+      "Don't use gradient-filled text; emphasis comes from weight, size, and the single red word.",
+      "Don't round corners, build pill tags, or nest cards inside cards.",
+      "Don't put a color bar on the left edge of a card as an accent; use the rim and the seam.",
+      "Don't invent screenshots, fake terminal output, release dates, or stats to fill a composition; draw an instrument instead.",
+      "Don't set body copy in mono or uppercase; mono is a readout voice, not a costume."
     ]
   }
 }

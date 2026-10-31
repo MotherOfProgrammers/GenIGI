@@ -55,6 +55,11 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  colorScheme: "dark light",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#07080f" },
+    { media: "(prefers-color-scheme: light)", color: "#f1f4fa" },
+  ],
 };
 
 const jsFlag = "document.documentElement.classList.add('has-js');";

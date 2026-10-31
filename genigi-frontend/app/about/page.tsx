@@ -11,7 +11,7 @@ export default function AboutPage() {
       <div className="wrap page-intro animate-in">
         <h1 className="display">
           Old missions.
-          <br />
+          <br />{" "}
           New company.
         </h1>
         <p>

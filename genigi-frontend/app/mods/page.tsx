@@ -37,7 +37,7 @@ export default function ModsPage() {
       <div className="wrap page-intro animate-in">
         <h1 className="display">
           Ideas in the
-          <br />
+          <br />{" "}
           works.
         </h1>
         <p>
@@ -61,7 +61,7 @@ export default function ModsPage() {
           <div className="section-heading">
             <h2 className="display">
               A careful kind
-              <br />
+              <br />{" "}
               of progress.
             </h2>
             <p>

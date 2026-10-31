@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "typecheck": "tsc --noEmit",
-    "auth:migrate": "node scripts/migrate-auth.ts"
+    "dev": "bun node_modules/next/dist/bin/next dev",
+    "build": "bun node_modules/next/dist/bin/next build",
+    "start": "bun node_modules/next/dist/bin/next start",
+    "typecheck": "bun node_modules/typescript/bin/tsc --noEmit",
+    "auth:migrate": "bun scripts/migrate-auth.ts"
   },
   "dependencies": {
     "better-auth": "^1.7.14",

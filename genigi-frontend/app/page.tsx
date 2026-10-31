@@ -3,6 +3,7 @@ import { GITHUB_ISSUES_URL } from "./site-config";
 import { ArrowIcon, ExternalIcon } from "./components/icons";
 import { Contributors } from "./components/contributors";
 import { HeroReticle } from "./components/hero-reticle";
+import { NeonStage } from "./components/neon-stage";
 
 const rampageFeatures = [
   {
@@ -23,16 +24,33 @@ const rampageFeatures = [
   },
 ];
 
+const tickerItems = [
+  { label: "No public build yet" },
+  { label: "Accounts open", href: "/auth?mode=signin" },
+  { label: "Mods in progress", href: "/mods" },
+  { label: "Keep the mission intact" },
+];
+
 export default function HomePage() {
   return (
     <main id="main" tabIndex={-1}>
       <section className="home-hero">
+        <NeonStage />
+        <div className="hero-frame" aria-hidden="true">
+          <span className="corner tl" />
+          <span className="corner tr" />
+          <span className="corner bl" />
+          <span className="corner br" />
+        </div>
+        <div className="hero-scan" aria-hidden="true" />
+
         <div className="wrap hero-inner">
           <div className="hero-copy">
-            <h1 className="display animate-in">
-              The mission
-              <br />
-              isn’t <span>over.</span>
+            <h1 className="display hero-title animate-in">
+              <span className="hero-line">The mission</span>{" "}
+              <span className="hero-line">
+                isn’t <span className="hot-word" data-text="over.">over.</span>
+              </span>
             </h1>
             <p className="animate-in delay-1">
               Project IGI still has a place in our hearts. We’re a player-first community working on
@@ -47,6 +65,7 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
+
           <div className="radar" aria-hidden="true">
             <span className="radar-bracket tl" />
             <span className="radar-bracket tr" />
@@ -67,20 +86,41 @@ export default function HomePage() {
             <span className="radar-tag three">Community built</span>
           </div>
         </div>
+
         <HeroReticle />
+
         <div className="hero-hud" aria-hidden="true">
-          <span>Briefing</span>
+          <span>GenIGI // Field archive</span>
           <span className="hero-hud-bar" />
-          <span>Scroll</span>
+          <span>Scroll to continue</span>
         </div>
       </section>
 
       <div className="ticker" role="group" aria-label="Community status">
         <div className="ticker-track">
-          <span>No public build yet</span>
-          <Link href="/auth?mode=signin">Accounts open</Link>
-          <Link href="/mods">Mods in progress</Link>
-          <span>Keep the mission intact</span>
+          {[0, 1].map((copy) => (
+            <div
+              className="ticker-group"
+              key={copy}
+              aria-hidden={copy === 1 ? true : undefined}
+            >
+              {tickerItems.map((item) => {
+                const inner = (
+                  <>
+                    <span className="status-dot" aria-hidden="true" />
+                    {item.label}
+                  </>
+                );
+                return item.href ? (
+                  <Link key={item.label} href={item.href} tabIndex={copy === 1 ? -1 : undefined}>
+                    {inner}
+                  </Link>
+                ) : (
+                  <span key={item.label}>{inner}</span>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -89,7 +129,7 @@ export default function HomePage() {
           <div className="section-heading">
             <h2 className="display">
               Better to play.
-              <br />
+              <br />{" "}
               Still IGI.
             </h2>
             <p>
@@ -103,7 +143,7 @@ export default function HomePage() {
               <div className="contour" />
               <div className="art-caption">
                 Respect the original.
-                <br />
+                <br />{" "}
                 Make room for more.
               </div>
             </div>
@@ -204,7 +244,7 @@ export default function HomePage() {
         <div className="wrap work-band-inner" data-reveal>
           <h2 className="display">
             Good ideas.
-            <br />
+            <br />{" "}
             No made-up release dates.
           </h2>
           <Link className="button" href="/mods">

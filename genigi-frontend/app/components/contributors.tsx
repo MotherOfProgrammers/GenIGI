@@ -33,6 +33,8 @@ export async function Contributors() {
                     height={48}
                     alt=""
                     loading="lazy"
+                    decoding="async"
+                    referrerPolicy="no-referrer"
                   />
                   <span className="contributor-main">
                     <span className="person-name">{person.login}</span>
