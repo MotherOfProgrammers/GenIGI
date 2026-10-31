@@ -2,6 +2,8 @@ import Link from "next/link";
 import { developers, GITHUB_URL } from "../site-config";
 import { GitHubIcon, MarkIcon } from "./icons";
 
+const STATIC_HOSTING = process.env.NEXT_PUBLIC_STATIC_HOSTING === "1";
+
 export function SiteFooter() {
   return (
     <footer className="site-footer">
@@ -19,7 +21,7 @@ export function SiteFooter() {
               <span className="sr-only"> (opens in a new tab)</span>
             </a>
             <Link href="/mods">Mods</Link>
-            <Link href="/auth?mode=signin">Sign in</Link>
+            {STATIC_HOSTING ? null : <Link href="/auth?mode=signin">Sign in</Link>}
           </nav>
         </div>
         <div className="footer-bottom">

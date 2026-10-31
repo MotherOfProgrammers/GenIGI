@@ -7,6 +7,8 @@ import { SiteHeader } from "./components/site-header";
 import { ThemeProvider } from "./components/theme-provider";
 import "./globals.css";
 
+const basePath = (process.env.NEXT_PUBLIC_BASE_PATH ?? "").replace(/\/+$/, "");
+
 const display = Tourney({
   subsets: ["latin"],
   weight: "variable",
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
   },
   description:
     "A player-first Project IGI community. Modern quality improvements, with the original story and feel kept intact.",
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: `${basePath}/favicon.svg` },
   openGraph: {
     title: "GenIGI — Project IGI, carried forward",
     description:

@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { googleEnabled } from "../auth";
+import { Suspense } from "react";
+import { googleEnabled } from "../auth-flags";
 import { AuthForm } from "../components/auth-form";
+import { AuthPageClient } from "../components/auth-page-client";
+import { StaticAccountsNotice } from "../components/static-accounts-notice";
 
-type AuthPageProps = {
-  searchParams: Promise<{ mode?: string | string[] }>;
-};
+export const metadata: Metadata = { title: "Account" };
 
-export async function generateMetadata({ searchParams }: AuthPageProps): Promise<Metadata> {
-  const { mode } = await searchParams;
-  return { title: mode === "signup" ? "Create account" : "Sign in" };
-}
+const STATIC_HOSTING = process.env.NEXT_PUBLIC_STATIC_HOSTING === "1";
 
-export default async function AuthPage({ searchParams }: AuthPageProps) {
-  const { mode } = await searchParams;
-  const formMode = mode === "signup" ? "register" : "login";
-  return <AuthForm key={formMode} mode={formMode} googleEnabled={googleEnabled} />;
+export default function AuthPage() {
+  if (STATIC_HOSTING) return <StaticAccountsNotice />;
+
+  return (
+    <Suspense fallback={<AuthForm mode="login" googleEnabled={googleEnabled} />}>
+      <AuthPageClient googleEnabled={googleEnabled} />
+    </Suspense>
+  );
 }

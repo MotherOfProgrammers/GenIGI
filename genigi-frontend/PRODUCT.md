@@ -45,5 +45,6 @@ The visitor's first question is "is this real, or is it vapourware?" Every surfa
 - Better Auth + better-sqlite3 on the server; no other runtime services.
 - Package manager: **Bun**.
 - Deployable as a standard Next server; no CDN-only assumptions.
+- The GitHub Pages deployment is a static export of `/`, `/mods`, `/about`, and the 404 page. Accounts need the server build, so the Pages `/auth` route states that instead of rendering a form; the full server build keeps email, password, and Google sign-in.
 - Must stay usable without JavaScript for reading content, and must honour `prefers-reduced-motion`.
 - Accessibility floor: 44px interactive targets, visible 2px focus rings, 11px minimum functional text, semantic landmarks, no motion-gated content.

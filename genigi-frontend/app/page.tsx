@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { GITHUB_ISSUES_URL } from "./site-config";
+import { GITHUB_ISSUES_URL, GITHUB_URL } from "./site-config";
 import { ArrowIcon, ExternalIcon } from "./components/icons";
 import { Contributors } from "./components/contributors";
 import { HeroReticle } from "./components/hero-reticle";
 import { NeonStage } from "./components/neon-stage";
+
+const STATIC_HOSTING = process.env.NEXT_PUBLIC_STATIC_HOSTING === "1";
 
 const rampageFeatures = [
   {
@@ -24,9 +26,9 @@ const rampageFeatures = [
   },
 ];
 
-const tickerItems = [
+const tickerItems: { label: string; href?: string }[] = [
   { label: "No public build yet" },
-  { label: "Accounts open", href: "/auth?mode=signin" },
+  ...(STATIC_HOSTING ? [] : [{ label: "Accounts open", href: "/auth?mode=signin" }]),
   { label: "Mods in progress", href: "/mods" },
   { label: "Keep the mission intact" },
 ];
@@ -281,13 +283,24 @@ export default function HomePage() {
             </article>
             <article className="value">
               <h3>Stay in the loop</h3>
-              <p>
-                Community accounts are open. Sign up with an email or Google; an account holds
-                only your name and sign-in.
-              </p>
-              <Link className="text-link" href="/auth?mode=signin">
-                Sign in <ArrowIcon />
-              </Link>
+              {STATIC_HOSTING ? (
+                <>
+                  <p>Development happens in the open. Follow commits, issues, and milestones.</p>
+                  <a className="text-link" href={GITHUB_URL} target="_blank" rel="noreferrer">
+                    Follow on GitHub <ExternalIcon />
+                  </a>
+                </>
+              ) : (
+                <>
+                  <p>
+                    Community accounts are open. Sign up with an email or Google; an account holds
+                    only your name and sign-in.
+                  </p>
+                  <Link className="text-link" href="/auth?mode=signin">
+                    Sign in <ArrowIcon />
+                  </Link>
+                </>
+              )}
             </article>
           </div>
         </div>
